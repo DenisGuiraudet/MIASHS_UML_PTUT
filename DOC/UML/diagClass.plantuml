@@ -6,23 +6,28 @@ class Personne {
   +String adresse
   +Int telephone
   +String email
-  +PriseRDV(Agence, Date) : void
-  +CreerMandat(Agence, Mandat) : void
-  +InteretAchat(Agence, Envie) : void
+}
+
+class Entreprise {
   +String formeJuridique
   +Int numSiren
 }
 
+Entreprise -up-|> Personne
+
 class Agence {
   +String nom
   +HashSet<Date, Personne> listeRdvVendeur
+  +CreerMandat(Personne, Mandat) : void
+  +CreerEnvie(Personne, Envie) : void
   +Contacter(Envie, Mandat) : void
+  +PriseRdvVendeur(Personne, Date) : void
   +OrganiserVisite(Envie, Mandat, Date) : void
   +OrganiserVente(Envie, Mandat, Date) : void
   +SignerPromesse(Promesse) : void
 }
 
-Personne "*"-up-"*" Agence
+Personne "*"-up-"1" Agence
 
 class Envie {
   +String type
@@ -34,8 +39,8 @@ class Envie {
 
 class Mandat {
   +HashSet<Date, Personne> listeRdvVisite
-  +Date
   +Int prix
+  +Date vente
   +Date debut
   +Date fin
 }
@@ -94,10 +99,10 @@ package pub {
     +addElem() : void
   }
 
-  TypeTexte -up-> TypePub
-  TypeHtml -up-> TypePub
-  TypeImg -up-> TypePub
-  TypeVid -up-> TypePub
+  TypeTexte -up-|> TypePub
+  TypeHtml -up-|> TypePub
+  TypeImg -up-|> TypePub
+  TypeVid -up-|> TypePub
 
 }
 
@@ -132,9 +137,9 @@ package immo {
 
   BienImmo -left-> Mandat
 
-  Terrain -up-> BienImmo
-  Maison -up-> BienImmo
-  Appartement -up-> BienImmo
+  Terrain -up-|> BienImmo
+  Maison -up-|> BienImmo
+  Appartement -up-|> BienImmo
 
 }
 
