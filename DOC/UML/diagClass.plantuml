@@ -1,0 +1,24 @@
+
+@startuml
+
+skinparam componentStyle uml2
+
+abstract class AbstractList {
+  +Int Windows
+  +void LockTheDoor()
+}
+
+class User {
+  +Int Windows
+  __
+  +void LockTheDoor()
+  .. Getter ..
+  + getName() : String
+  + getAddress() : Address
+  .. Setter ..
+  + setName() : String
+}
+
+User --> AbstractList
+
+@enduml

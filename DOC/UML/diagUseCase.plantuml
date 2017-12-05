@@ -1,0 +1,15 @@
+
+@startuml
+
+:User:
+
+rectangle Stuff {
+  (Lol)
+}
+
+User --> (Lol)
+
+(Lol) ..> (mdr) : include
+
+
+@enduml
