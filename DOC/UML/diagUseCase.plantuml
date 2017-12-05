@@ -1,15 +1,40 @@
-
 @startuml
+left to right direction
 
-:User:
 
-rectangle Stuff {
-  (Lol)
+rectangle "Logiciel" {
+
+    Agence --> (Ajouter un personne)
+    Agence --> (Modifier les informations personne)
+    (Modifier les informations personne) .> (Ajouter un personne) : include
+    Agence --> (Organiser rendez-vous)
+
+
+    rectangle "LogiVente"{
+        Agence --> (Ajouter un bien)
+        (Ajouter un bien) .> (Organiser rendez-vous) : include
+        Agence --> (Modifier les informations biens)
+        (Modifier les informations biens) .> (Ajouter un bien) : include
+        Agence --> (Créer mandat)
+        (Créer mandat) .> (Organiser rendez-vous) : include
+
+    }
+    rectangle "LogiAchat"{
+        Agence --> (Créer une fiche de voeux)
+        Agence --> (Créer une promesse de vente)
+        (Créer une promesse de vente) .> (Organiser rendez-vous) : include
+        Agence --> (Conclure une promesse de vente)
+    }
+
+    rectangle "LogiPub"{
+        Agence --> (Créer une pub)
+        Agence --> (Modifier une pub)
+    }
+    rectangle "LogiStat"{
+        Agence --> (Voir les stats)
+    }
+
 }
-
-User --> (Lol)
-
-(Lol) ..> (mdr) : include
 
 
 @enduml
