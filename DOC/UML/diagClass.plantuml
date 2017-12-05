@@ -1,24 +1,141 @@
 
 @startuml
 
-skinparam componentStyle uml2
-
-abstract class AbstractList {
-  +Int Windows
-  +void LockTheDoor()
+class Personne {
+  +String nom
+  +String adresse
+  +Int telephone
+  +String email
+  +PriseRDV(Agence, Date) : void
+  +CreerMandat(Agence, Mandat) : void
+  +InteretAchat(Agence, Envie) : void
+  +String formeJuridique
+  +Int numSiren
 }
 
-class User {
-  +Int Windows
-  __
-  +void LockTheDoor()
-  .. Getter ..
-  + getName() : String
-  + getAddress() : Address
-  .. Setter ..
-  + setName() : String
+class Agence {
+  +String nom
+  +HashSet<Date, Personne> listeRdvVendeur
+  +Contacter(Envie, Mandat) : void
+  +OrganiserVisite(Envie, Mandat, Date) : void
+  +OrganiserVente(Envie, Mandat, Date) : void
+  +SignerPromesse(Promesse) : void
 }
 
-User --> AbstractList
+Personne "*"-up-"*" Agence
+
+class Envie {
+  +String type
+  +Double prix
+  +String localisation
+  +Double surfaceSol
+  +Int nbPieces
+}
+
+class Mandat {
+  +HashSet<Date, Personne> listeRdvVisite
+  +Date
+  +Int prix
+  +Date debut
+  +Date fin
+}
+
+Agence "1"-right-"*" Mandat
+Agence "1"-left-"*" Envie
+
+Personne -up-> Envie
+Personne -up-> Mandat
+
+class Promesse {
+  +Double prixVerseVendeur
+  +String adresseNotaire
+  +Date vente
+  +Double commissionAgence
+  +Double fraisVente
+}
+
+Agence "1"-up-"*" Promesse
+Mandat -up-> Promesse
+Envie -up-> Promesse
+
+class Notaire {
+  +VerserArgent()
+}
+
+Notaire -down-> Promesse
+
+package pub {
+
+  class AnnoncePub {
+    +TypePub[] listePub
+  }
+
+  Agence "1"-down-"*" AnnoncePub
+
+  abstract class TypePub {
+    +addElem() : void
+  }
+
+  TypePub -up-> AnnoncePub
+
+  class TypeTexte {
+    +addElem() : void
+  }
+
+  class TypeHtml {
+    +addElem() : void
+  }
+
+  class TypeImg {
+    +addElem() : void
+  }
+
+  class TypeVid {
+    +addElem() : void
+  }
+
+  TypeTexte -up-> TypePub
+  TypeHtml -up-> TypePub
+  TypeImg -up-> TypePub
+  TypeVid -up-> TypePub
+
+}
+
+package immo {
+
+  abstract class BienImmo {
+    +Int num
+    +String adresse
+    +String orientation
+    +Double prix
+    +Date vente
+    +Date[] dispo
+  }
+
+  class Terrain {
+    +Double surfaceSol
+    +Double longueurFacade
+  }
+
+  class Maison {
+    +Double surfaceHabitable
+    +Int nbPieces
+    +Int nbEtages
+    +String chauffage
+  }
+
+  class Appartement {
+    +Int nbPieces
+    +Int etage
+    +Double chargesMensuelles
+  }
+
+  BienImmo -left-> Mandat
+
+  Terrain -up-> BienImmo
+  Maison -up-> BienImmo
+  Appartement -up-> BienImmo
+
+}
 
 @enduml
