@@ -16,19 +16,19 @@ So much fun
 
 image::UML/diagUseCase.svg[Diagramme des Cas d'utilisation]
 
-Classe
-~~~~~~
-
-So much fun
-
-image::UML/diagClass.svg[Diagramme de Classe]
-
 Paquetage
 ~~~~~~~~~
 
 So much fun
 
-image::UML/diagPaquet.svg[Diagramme de Paquetage]
+image::UML/diagPackage.svg[Diagramme de Paquetage]
+
+Classe
+~~~~~~
+
+Utilisation du patterne Strategy (à refaire pour pub)
+
+image::UML/diagClass.svg[Diagramme de Classe]
 
 Activité
 ~~~~~~~~
@@ -42,4 +42,7 @@ Séquence
 
 So much fun
 
-image::UML/diagState.svg[Diagramme de Séquence]
+image::UML/diagSequence.svg[Diagramme de Séquence]
+
+Choix techniques
+----------------

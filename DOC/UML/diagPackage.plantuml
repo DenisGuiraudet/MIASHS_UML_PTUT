@@ -1,0 +1,49 @@
+
+@startuml
+
+package app {
+
+  folder agence [
+
+    +Agence()
+    +Envie()
+    +Mandat()
+    +Promesse()
+    +Notaire()
+
+  ]
+
+  folder pub [
+
+    +AnnoncePub()
+    +TypePub()
+    +TypeTexte()
+    +TypeHtml()
+    +TypeImg()
+    +TypeVid()
+
+  ]
+
+  folder user [
+
+    +Personne()
+    +Entreprise()
+
+  ]
+
+  folder immo [
+
+    +BienImmo()
+    +Terrain()
+    +Maison()
+    +Appartement()
+
+  ]
+
+  pub <.down. agence : <<import>>
+  user <.down. agence : <<import>>
+  immo <.down. agence : <<import>>
+
+}
+
+@enduml
