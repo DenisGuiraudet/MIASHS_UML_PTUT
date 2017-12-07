@@ -27,8 +27,7 @@ rectangle "Logiciel" {
     }
 
     rectangle "LogiPub"{
-        Agence --> (Créer une pub)
-        Agence --> (Modifier une pub)
+        Agence --> (Créer un document)
     }
     rectangle "LogiStat"{
         Agence --> (Voir les stats)

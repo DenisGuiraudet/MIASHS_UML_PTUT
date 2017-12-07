@@ -1,0 +1,11 @@
+@startuml
+
+title "Messages - Sequence Diagram"
+
+actor User
+database Widgets
+
+User -> GUI : To boundary
+Widget -> Widgets : To database
+
+@enduml
