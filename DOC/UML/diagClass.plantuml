@@ -15,7 +15,7 @@ package user {
     -Int numSiren
   }
 
-  Entreprise --|> Personne
+  Entreprise -up-|> Personne
 
 }
 
@@ -33,7 +33,7 @@ package agence {
     +SignerPromesse(Promesse) : void
   }
 
-  Personne "*"<-- Agence
+  Personne "*"<-- Agence : "listePersonne"
 
   class Envie {
     -String type
@@ -51,8 +51,8 @@ package agence {
     -Date fin
   }
 
-  Agence -->"*" Mandat
-  Agence -->"*" Envie
+  Agence -up->"*" Mandat : "mandat"
+  Agence -->"*" Envie : "envie"
 
   Envie -->"1" Personne : "acheteur"
   Mandat -->"1" Personne : "vendeur"
@@ -65,7 +65,7 @@ package agence {
     -Double fraisVente
   }
 
-  Agence -->"*" Promesse
+  Agence -->"*" Promesse : "Listpromesse"
   Mandat "1"<-- Promesse : "mandat"
   Envie "1"<-- Promesse : "envie"
 
@@ -80,16 +80,14 @@ package agence {
 package pub {
 
   class AnnoncePub {
-    -TypePub[] listePub
   }
 
-  Agence -->"*" AnnoncePub
+  AnnoncePub "*"<-- Agence : "listeAnnonce"
+  TypePub "*"<-- AnnoncePub : "listePub"
 
   abstract class TypePub {
     +addElem() : void
   }
-
-  TypePub --> AnnoncePub
 
   class TypeTexte {
     +addElem() : void
@@ -147,8 +145,10 @@ package immo {
   BienImmo "1"<-- Mandat : "bienImmo"
 
   Terrain -up-|> BienImmo
-  Maison -up-|> Terrain
+  Maison -up-|> BienImmo
   Appartement -up-|> BienImmo
+
+  Maison -left->"1" Terrain : "terrain"
 
 }
 
