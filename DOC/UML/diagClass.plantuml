@@ -4,26 +4,26 @@
 package user {
 
   class Personne {
-    +String nom
-    +String adresse
-    +Int telephone
-    +String email
+    -String nom
+    -String adresse
+    -Int telephone
+    -String email
   }
 
   class Entreprise {
-    +String formeJuridique
-    +Int numSiren
+    -String formeJuridique
+    -Int numSiren
   }
 
-  Entreprise -up-|> Personne
+  Entreprise --|> Personne
 
 }
 
 package agence {
 
   class Agence {
-    +String nom
-    +HashSet<Date, Personne> listeRdvVendeur
+    -String nom
+    -HashSet<Date, Personne> listeRdvVendeur
     +CreerMandat(Personne, Mandat) : void
     +CreerEnvie(Personne, Envie) : void
     +Contacter(Envie, Mandat) : void
@@ -33,63 +33,63 @@ package agence {
     +SignerPromesse(Promesse) : void
   }
 
-  Personne "*"-up-"1" Agence
+  Personne "*"<-- Agence
 
   class Envie {
-    +String type
-    +Double prix
-    +String localisation
-    +Double surfaceSol
-    +Int nbPieces
+    -String type
+    -Double prix
+    -String localisation
+    -Double surfaceSol
+    -Int nbPieces
   }
 
   class Mandat {
-    +HashSet<Date, Personne> listeRdvVisite
-    +Int prix
-    +Date vente
-    +Date debut
-    +Date fin
+    -HashSet<Date, Personne> listeRdvVisite
+    -Int prix
+    -Date vente
+    -Date debut
+    -Date fin
   }
 
-  Agence "1"-left-"*" Mandat
-  Agence "1"--"*" Envie
+  Agence -->"*" Mandat
+  Agence -->"*" Envie
 
-  Envie <-- Personne
-  Mandat <-- Personne
+  Envie -->"1" Personne : "acheteur"
+  Mandat -->"1" Personne : "vendeur"
 
   class Promesse {
-    +Double prixVerseVendeur
-    +String adresseNotaire
-    +Date vente
-    +Double commissionAgence
-    +Double fraisVente
+    -Double prixVerseVendeur
+    -String adresseNotaire
+    -Date vente
+    -Double commissionAgence
+    -Double fraisVente
   }
 
-  Agence "1"-up-"*" Promesse
-  Mandat -up-> Promesse
-  Envie -up-> Promesse
+  Agence -->"*" Promesse
+  Mandat "1"<-- Promesse : "mandat"
+  Envie "1"<-- Promesse : "envie"
 
   class Notaire {
     +VerserArgent()
   }
 
-  Notaire -down-> Promesse
+  Notaire "1"<-- Promesse : "notaire"
 
 }
 
 package pub {
 
   class AnnoncePub {
-    +TypePub[] listePub
+    -TypePub[] listePub
   }
 
-  Agence "1"-down-"*" AnnoncePub
+  Agence -->"*" AnnoncePub
 
   abstract class TypePub {
     +addElem() : void
   }
 
-  TypePub -up-> AnnoncePub
+  TypePub --> AnnoncePub
 
   class TypeTexte {
     +addElem() : void
@@ -117,36 +117,37 @@ package pub {
 package immo {
 
   abstract class BienImmo {
-    +Int num
-    +String adresse
-    +String orientation
-    +Double prix
-    +Date vente
-    +Date[] dispo
+    -Int num
+    -String adresse
+    -String orientation
+    -Double prix
+    -Date vente
+    -Date[] dispo
+    +Correspondance(Envie) : Double
   }
 
   class Terrain {
-    +Double surfaceSol
-    +Double longueurFacade
+    -Double surfaceSol
+    -Double longueurFacade
   }
 
   class Maison {
-    +Double surfaceHabitable
-    +Int nbPieces
-    +Int nbEtages
-    +String chauffage
+    -Double surfaceHabitable
+    -Int nbPieces
+    -Int nbEtages
+    -String chauffage
   }
 
   class Appartement {
-    +Int nbPieces
-    +Int etage
-    +Double chargesMensuelles
+    -Int nbPieces
+    -Int etage
+    -Double chargesMensuelles
   }
 
-  BienImmo -left-> Mandat
+  BienImmo "1"<-- Mandat : "bienImmo"
 
   Terrain -up-|> BienImmo
-  Maison -up-|> BienImmo
+  Maison -up-|> Terrain
   Appartement -up-|> BienImmo
 
 }
