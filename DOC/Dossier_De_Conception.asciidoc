@@ -46,3 +46,7 @@ image::UML/diagSequence.svg[Diagramme de Séquence]
 
 Choix techniques
 ----------------
+
+Programme en Java,
+Utilisation de la librairie graphique JavaFX,
+Base de donnée locale avec des fichiers JSON.
