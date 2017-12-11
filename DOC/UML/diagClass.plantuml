@@ -32,7 +32,6 @@ package agence {
     +organiserVisite(Envie, Mandat, Date) : void
     +organiserVente(Envie, Mandat, Date) : void
     -creerPromesse(Promesse) : void
-    +signerPromesse(Promesse) : void
     +voirStats() : void
     +creerDocument() : void
   }
@@ -68,6 +67,7 @@ package agence {
     -Date vente
     -Double commissionAgence
     -Double fraisVente
+    +signerPromesse() : void
   }
 
   Agence -->"*" Promesse : "listePromesse"
@@ -85,13 +85,13 @@ package agence {
 package pub {
 
   class AnnoncePub {
+    +addElem(TypePub) : void
   }
 
   AnnoncePub "*"<-- Agence : "listeAnnonce"
   TypePub "*"<-down- AnnoncePub : "listePub"
 
   abstract class TypePub {
-    +addElem() : void
   }
 
   class TypeTexte {

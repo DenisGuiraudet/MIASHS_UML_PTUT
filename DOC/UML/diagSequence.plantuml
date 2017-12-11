@@ -15,12 +15,17 @@ participant ":TypePub" As TP
 
 A -> A : priseRdvVendeur()
 A -> Per : creerPersonne()
+Per --> A :
 A -> M : creerMandat()
 M -> B : creerBien()
+B --> M :
+M --> A :
+B -> B : correspondance()
 
 ...
 
 A -> E : creerEnvie()
+E --> A :
 
 ...
 
@@ -34,7 +39,8 @@ A -> A : organiserVisite()
 
 A -> A : organiserVente()
 A -> Pro : creerPromesse()
-A -> Pro : signerPromesse()
+Pro --> A :
+Pro -> Pro : signerPromesse()
 
 ...
 
@@ -43,6 +49,8 @@ A -> A : voirStats()
 ...
 
 A -> AP : creerDocument()
+AP --> A :
 AP -> TP : addElem()
+TP --> AP :
 
 @enduml

@@ -12,8 +12,7 @@ rectangle "Logiciel" {
   Agence --> (Organiser rendez-vous)
 
   rectangle "LogiVente"{
-    Agence --> (Ajouter bien)
-    (Ajouter bien) .up.> (Organiser rendez-vous) : include
+    (Ajouter bien) <.right. (Créer mandat) : include
     Agence --> (Modifier bien)
     Agence --> (Créer mandat)
     (Créer mandat) .up.> (Organiser rendez-vous) : include
