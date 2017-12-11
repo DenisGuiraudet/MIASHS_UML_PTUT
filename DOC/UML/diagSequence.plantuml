@@ -1,8 +1,6 @@
 
 @startuml
 
-hide footbox
-title Footer removed
 
 participant ":Agence" As A
 participant ":Personne" As Per
@@ -16,20 +14,21 @@ participant ":TypePub" As TP
 A -> A : priseRdvVendeur()
 A -> Per : creerPersonne()
 Per --> A :
+Per -> Per : SETTER Personne
 A -> M : creerMandat()
 M -> B : creerBien()
 B --> M :
+B -> B : SETTER Bien
 M --> A :
-B -> B : correspondance()
+
+...
+
+B -> B : correspondance(Envie)
 
 ...
 
 A -> E : creerEnvie()
 E --> A :
-
-...
-
-A -> A : contacter()
 
 ...
 

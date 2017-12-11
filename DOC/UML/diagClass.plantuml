@@ -17,27 +17,6 @@ package user {
 
   Entreprise -up-|> Personne
 
-}
-
-package agence {
-
-  class Agence {
-    -String nom
-    -HashSet<Date, Personne> listeRdvVendeur
-    +priseRdvVendeur(Personne, Date) : void
-    -creerPersonne(String, String, Int, String) : void
-    +creerMandat(Personne, Mandat) : void
-    +creerEnvie(Personne, Envie) : void
-    +contacter(Envie, Mandat) : void
-    +organiserVisite(Envie, Mandat, Date) : void
-    +organiserVente(Envie, Mandat, Date) : void
-    -creerPromesse(Promesse) : void
-    +voirStats() : void
-    +creerDocument() : void
-  }
-
-  Personne "*"<-- Agence : "listePersonne"
-
   class Envie {
     -String type
     -Double prix
@@ -46,20 +25,36 @@ package agence {
     -Int nbPieces
   }
 
+  Personne *--"*" Envie : "listeEnvie"
+
+}
+
+package agence {
+
+  class Agence {
+    -String nom
+    -HashSet<Date, Personne> listeRdvVendeur
+    +creerPersonne(String, String, Int, String) : void
+    +priseRdvVendeur(Personne, Date) : void
+    +creerMandat(Personne, Mandat) : void
+    +creerEnvie(Personne, Envie) : void
+    +organiserVisite(Envie, Mandat, Date) : void
+    +organiserVente(Envie, Mandat, Date) : void
+    -creerPromesse(Promesse) : void
+    +voirStats() : void
+    +creerDocument() : void
+  }
+
+  Personne "*"-left-* Agence : "listePersonne"
+
   class Mandat {
     -HashSet<Date, Personne> listeRdvVisite
     -Int prix
     -Date vente
     -Date debut
     -Date fin
-    - reerBien() : void
+    -creerBien() : void
   }
-
-  Agence -up->"*" Mandat : "mandat"
-  Agence -->"*" Envie : "envie"
-
-  Envie -->"1" Personne : "acheteur"
-  Mandat -->"1" Personne : "vendeur"
 
   class Promesse {
     -Double prixVerseVendeur
@@ -70,13 +65,17 @@ package agence {
     +signerPromesse() : void
   }
 
-  Agence -->"*" Promesse : "listePromesse"
-  Mandat "1"<-- Promesse : "mandat"
-  Envie "1"<-- Promesse : "envie"
+  Agence *--"*" Mandat : "listeMandat"
+  Agence *--"*" Promesse : "listePromesse"
+
+  Mandat -->"1" Personne : "vendeur"
+  Promesse -->"1" Personne : "acheteur"
 
   class Notaire {
     +verserArgent()
   }
+
+  Agence *--"*" Notaire : "listeNotaire"
 
   Notaire "1"<-- Promesse : "notaire"
 
@@ -88,22 +87,31 @@ package pub {
     +addElem(TypePub) : void
   }
 
-  AnnoncePub "*"<-- Agence : "listeAnnonce"
-  TypePub "*"<-down- AnnoncePub : "listePub"
+  AnnoncePub "*"--* Agence : "listeAnnonce"
+  TypePub "*"--* AnnoncePub : "listePub"
 
   abstract class TypePub {
+    +getElem()
   }
 
   class TypeTexte {
+    -String texte
+    +getElem()
   }
 
   class TypeHtml {
+    -String html
+    +getElem()
   }
 
   class TypeImg {
+    -String img
+    +getElem()
   }
 
   class TypeVid {
+    -String vid
+    +getElem()
   }
 
   TypeTexte -up-|> TypePub
@@ -125,9 +133,14 @@ package immo {
     +correspondance(Envie) : Double
   }
 
+  BienImmo "*"-left-* Agence : "listeBien"
+  Mandat -up->"1" BienImmo : "bien"
+  Promesse -up->"1" BienImmo : "bien"
+
   class Terrain {
     -Double surfaceSol
     -Double longueurFacade
+    +correspondance(Envie) : Double
   }
 
   class Maison {
@@ -135,21 +148,21 @@ package immo {
     -Int nbPieces
     -Int nbEtages
     -String chauffage
+    +correspondance(Envie) : Double
   }
 
   class Appartement {
     -Int nbPieces
     -Int etage
     -Double chargesMensuelles
+    +correspondance(Envie) : Double
   }
 
-  BienImmo "1"<-- Mandat : "bienImmo"
-
-  Terrain -up-|> BienImmo
-  Maison -up-|> BienImmo
   Appartement -up-|> BienImmo
+  Maison -up-|> BienImmo
+  Terrain -up-|> BienImmo
 
-  Maison -left->"1" Terrain : "terrain"
+  Maison *-left-"1" Terrain : "terrain"
 
 }
 
