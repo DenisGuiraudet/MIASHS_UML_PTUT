@@ -1,24 +1,15 @@
 
 @startuml
 
-title Conditional - Activity Diagram
-
-
 start
 
-:Eat Hot Wings;
-note right: This is a note to the right
+:Organiser Rendez-vous;
 
-:Drink Homebrew;
-note left: This is a note to the left
+:Créer une personne;
+:Créer un mandat;
+:Créer un bien;
 
-if (Turn On The Game?) then (yes)
-  :__Having Fun__!!!;
-else (no)
-  :Not Having Fun;
-endif
-
-:Go To Bed;
+:Organiser Visite;
 
 stop
 
