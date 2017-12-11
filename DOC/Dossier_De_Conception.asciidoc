@@ -26,14 +26,14 @@ image::UML/diagPackage.svg[Diagramme de Paquetage]
 Classe
 ~~~~~~
 
-Utilisation du patterne Strategy (à refaire pour pub)
+Utilisation du patterne Strategy ? (à refaire pour pub)
 
 image::UML/diagClass.svg[Diagramme de Classe]
 
 Activité
 ~~~~~~~~
 
-So much fun
+Enregistrement d'une vente.
 
 image::UML/diagActivity.svg[Diagramme d'Activité]
 
