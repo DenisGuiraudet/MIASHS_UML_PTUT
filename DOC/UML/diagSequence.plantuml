@@ -1,11 +1,20 @@
+
 @startuml
 
-title "Messages - Sequence Diagram"
+hide footbox
+title Footer removed
 
-actor User
-database Widgets
+participant ":Agence" As A
+participant ":Mandat" As M
+participant ":Bien" As B
+participant ":Envie" As E
+participant ":Promesse" As Pro
 
-User -> GUI : To boundary
-Widget -> Widgets : To database
+A -> A : PriseRdvVendeur()
+A -> A : CreerPersonne()
+
+...
+
+A -> A : CreerMandat()
 
 @enduml

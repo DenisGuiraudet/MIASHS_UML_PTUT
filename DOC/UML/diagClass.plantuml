@@ -24,13 +24,17 @@ package agence {
   class Agence {
     -String nom
     -HashSet<Date, Personne> listeRdvVendeur
+    +PriseRdvVendeur(Personne, Date) : void
+    -CreerPersonne(String, String, Int, String) : void
     +CreerMandat(Personne, Mandat) : void
     +CreerEnvie(Personne, Envie) : void
     +Contacter(Envie, Mandat) : void
-    +PriseRdvVendeur(Personne, Date) : void
     +OrganiserVisite(Envie, Mandat, Date) : void
     +OrganiserVente(Envie, Mandat, Date) : void
+    -CreerPromesse(Promesse) : void
     +SignerPromesse(Promesse) : void
+    +VoirStats() : void
+    +CreerDocument() : void
   }
 
   Personne "*"<-- Agence : "listePersonne"
@@ -49,6 +53,7 @@ package agence {
     -Date vente
     -Date debut
     -Date fin
+    -CreerBien() : void
   }
 
   Agence -up->"*" Mandat : "mandat"
@@ -65,7 +70,7 @@ package agence {
     -Double fraisVente
   }
 
-  Agence -->"*" Promesse : "Listpromesse"
+  Agence -->"*" Promesse : "listePromesse"
   Mandat "1"<-- Promesse : "mandat"
   Envie "1"<-- Promesse : "envie"
 
@@ -83,7 +88,7 @@ package pub {
   }
 
   AnnoncePub "*"<-- Agence : "listeAnnonce"
-  TypePub "*"<-- AnnoncePub : "listePub"
+  TypePub "*"<-down- AnnoncePub : "listePub"
 
   abstract class TypePub {
     +addElem() : void

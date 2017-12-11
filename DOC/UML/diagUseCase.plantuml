@@ -1,37 +1,38 @@
-@startuml
-left to right direction
 
+@startuml
+
+left to right direction
 
 rectangle "Logiciel" {
 
-    Agence --> (Ajouter un personne)
-    Agence --> (Modifier les informations personne)
-    (Modifier les informations personne) .> (Ajouter un personne) : include
-    Agence --> (Organiser rendez-vous)
+  (Organiser rendez-vous)
 
+  Agence --> (Ajouter personne)
+  Agence --> (Modifier personne)
+  Agence --> (Organiser rendez-vous)
 
-    rectangle "LogiVente"{
-        Agence --> (Ajouter un bien)
-        (Ajouter un bien) .> (Organiser rendez-vous) : include
-        Agence --> (Modifier les informations biens)
-        (Modifier les informations biens) .> (Ajouter un bien) : include
-        Agence --> (Créer mandat)
-        (Créer mandat) .> (Organiser rendez-vous) : include
+  rectangle "LogiVente"{
+    Agence --> (Ajouter bien)
+    (Ajouter bien) .up.> (Organiser rendez-vous) : include
+    Agence --> (Modifier bien)
+    Agence --> (Créer mandat)
+    (Créer mandat) .up.> (Organiser rendez-vous) : include
+  }
 
-    }
-    rectangle "LogiAchat"{
-        Agence --> (Créer une fiche de voeux)
-        Agence --> (Créer une promesse de vente)
-        (Créer une promesse de vente) .> (Organiser rendez-vous) : include
-        Agence --> (Conclure une promesse de vente)
-    }
+  rectangle "LogiAchat"{
+    Agence --> (Créer promesse de vente)
+    Agence --> (Créer envie)
+    (Créer promesse de vente) .up.> (Organiser rendez-vous) : include
+    Agence --> (Signer promesse de vente)
+  }
 
-    rectangle "LogiPub"{
-        Agence --> (Créer un document)
-    }
-    rectangle "LogiStat"{
-        Agence --> (Voir les stats)
-    }
+  rectangle "LogiPub"{
+    Agence --> (Créer document)
+  }
+
+  rectangle "LogiStat"{
+    Agence --> (Voir stats)
+  }
 
 }
 
