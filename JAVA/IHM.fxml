@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TabPane prefHeight="438.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Créer personne">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Nom" />
+                        <TextField layoutX="88.0" layoutY="59.0" />
+                        <Label layoutX="88.0" layoutY="93.0" text="Adresse" />
+                        <Button layoutX="92.0" layoutY="258.0" mnemonicParsing="false" text="Créer client" />
+                        <TextField layoutX="88.0" layoutY="110.0" />
+                        <Label layoutX="326.0" layoutY="42.0" text="Téléphone" />
+                        <TextField layoutX="326.0" layoutY="59.0" />
+                        <TextField layoutX="326.0" layoutY="110.0" />
+                        <Label layoutX="326.0" layoutY="93.0" text="Email" />
+                        <Label layoutX="326.0" layoutY="205.0" text="Forme juridique" />
+                        <TextField layoutX="326.0" layoutY="222.0" />
+                        <Label layoutX="89.0" layoutY="205.0" text="Numéro SIREN" />
+                        <TextField layoutX="88.0" layoutY="222.0" />
+                        <ToggleButton layoutX="94.0" layoutY="161.0" mnemonicParsing="false" text="Entreprise" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Créer Bien">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Adresse" />
+                        <TextField layoutX="88.0" layoutY="59.0" />
+                        <Button layoutX="527.0" layoutY="288.0" mnemonicParsing="false" text="Créer bien" />
+                        <ChoiceBox layoutX="88.0" layoutY="107.0" prefHeight="25.0" prefWidth="148.0" />
+                        <Label layoutX="88.0" layoutY="90.0" text="Type" />
+                        <Label layoutX="88.0" layoutY="152.0" text="Orientation" />
+                        <TextField layoutX="88.0" layoutY="169.0" />
+                        <Label layoutX="272.0" layoutY="152.0" text="Surface Sol" />
+                        <TextField layoutX="272.0" layoutY="169.0" />
+                        <TextField layoutX="449.0" layoutY="169.0" />
+                        <Label layoutX="449.0" layoutY="152.0" text="Longueur Façade" />
+                        <Label layoutX="88.0" layoutY="210.0" text="Surface habitable" />
+                        <TextField layoutX="88.0" layoutY="227.0" />
+                        <Label layoutX="274.0" layoutY="210.0" text="Nombre de pièces" />
+                        <TextField layoutX="272.0" layoutY="227.0" />
+                        <Label layoutX="449.0" layoutY="210.0" text="Nombre d'étage" />
+                        <TextField layoutX="449.0" layoutY="227.0" />
+                        <Label layoutX="91.0" layoutY="271.0" text="Chauffage" />
+                        <TextField layoutX="88.0" layoutY="288.0" />
+                        <Label layoutX="274.0" layoutY="271.0" text="Charge Mensuelle" />
+                        <TextField layoutX="272.0" layoutY="288.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Créer Mandat">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Personne" />
+                        <Button layoutX="90.0" layoutY="286.0" mnemonicParsing="false" text="Créer mandat" />
+                        <Button layoutX="87.0" layoutY="66.0" mnemonicParsing="false" text="Liste des personne" />
+                        <Label layoutX="295.0" layoutY="51.0" text="Nom" />
+                        <Label layoutX="295.0" layoutY="79.0" text="Adresse" />
+                        <Label layoutX="88.0" layoutY="107.0" text="Biens" />
+                        <Button layoutX="87.0" layoutY="131.0" mnemonicParsing="false" text="Liste des biens" />
+                        <Label layoutX="295.0" layoutY="116.0" text="Adresse" />
+                        <Label layoutX="296.0" layoutY="144.0" text="Type" />
+                        <TextField layoutX="87.0" layoutY="199.0" />
+                        <Label layoutX="88.0" layoutY="182.0" text="Prix" />
+                        <Label layoutX="281.0" layoutY="182.0" text="Jour Visitable" />
+                        <TextField layoutX="87.0" layoutY="248.0" />
+                        <Label layoutX="88.0" layoutY="231.0" text="Date Buttoire" />
+                        <DatePicker layoutX="281.0" layoutY="212.0" />
+                        <Button layoutX="478.0" layoutY="212.0" mnemonicParsing="false" text="Add" />
+                        <TableView layoutX="281.0" layoutY="246.0" prefHeight="80.0" prefWidth="304.0">
+                          <columns>
+                            <TableColumn prefWidth="302.0" text="Date" />
+                          </columns>
+                        </TableView>
+                        <TextField layoutX="348.0" layoutY="47.0" />
+                        <TextField layoutX="348.0" layoutY="75.0" />
+                        <TextField layoutX="348.0" layoutY="112.0" />
+                        <TextField layoutX="348.0" layoutY="140.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Créer Promesse">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Acheteur" />
+                        <Button layoutX="519.0" layoutY="287.0" mnemonicParsing="false" text="Créer promesse" />
+                        <Button layoutX="87.0" layoutY="66.0" mnemonicParsing="false" text="Liste des personne" />
+                        <Label layoutX="295.0" layoutY="51.0" text="Nom" />
+                        <Label layoutX="295.0" layoutY="79.0" text="Adresse" />
+                        <Label layoutX="88.0" layoutY="107.0" text="Biens" />
+                        <Button layoutX="87.0" layoutY="131.0" mnemonicParsing="false" text="Liste des biens" />
+                        <Label layoutX="295.0" layoutY="116.0" text="Adresse" />
+                        <Label layoutX="292.0" layoutY="144.0" text="Type" />
+                        <Label layoutX="88.0" layoutY="190.0" text="Date d'achat" />
+                        <TextField layoutX="88.0" layoutY="207.0" />
+                        <Label layoutX="310.0" layoutY="190.0" text="Prix" />
+                        <Label layoutX="290.0" layoutY="224.0" text="Frais vente" />
+                        <Label layoutX="277.0" layoutY="253.0" text="Commission agence" />
+                        <Label layoutX="83.0" layoutY="270.0" text="Nom Notaire" />
+                        <Label layoutX="83.0" layoutY="291.0" text="Adresse Notaire" />
+                        <TextField editable="false" layoutX="389.0" layoutY="47.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="75.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="112.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="140.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="186.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="216.0" />
+                        <TextField editable="false" layoutX="389.0" layoutY="249.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Créer Envie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Demandeur" />
+                        <Button layoutX="519.0" layoutY="287.0" mnemonicParsing="false" text="Créer envie" />
+                        <Button layoutX="87.0" layoutY="66.0" mnemonicParsing="false" text="Choirsir personne" />
+                        <Label layoutX="295.0" layoutY="51.0" text="Nom" />
+                        <Label layoutX="295.0" layoutY="70.0" text="Adresse" />
+                        <Label layoutX="88.0" layoutY="107.0" text="Type Biens" />
+                        <Label layoutX="299.0" layoutY="107.0" text="Prix" />
+                        <Label layoutX="299.0" layoutY="141.0" text="Localisation" />
+                        <Label layoutX="295.0" layoutY="173.0" text="Surface" />
+                        <ChoiceBox layoutX="88.0" layoutY="124.0" prefWidth="150.0" />
+                        <Label layoutX="295.0" layoutY="211.0" text="Nombre de pièce" />
+                        <TextField layoutX="420.0" layoutY="103.0" />
+                        <TextField layoutX="420.0" layoutY="137.0" />
+                        <TextField layoutX="420.0" layoutY="169.0" />
+                        <TextField layoutX="420.0" layoutY="207.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Organiser RDV">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Label layoutX="88.0" layoutY="42.0" text="Demandeur" />
+                        <Button layoutX="519.0" layoutY="287.0" mnemonicParsing="false" text="Créer RDV" />
+                        <Button layoutX="87.0" layoutY="66.0" mnemonicParsing="false" text="Choirsir personne" />
+                        <Label layoutX="295.0" layoutY="51.0" text="Nom" />
+                        <Label layoutX="295.0" layoutY="70.0" text="Adresse" />
+                        <Label layoutX="88.0" layoutY="181.0" text="Date" />
+                        <DatePicker layoutX="87.0" layoutY="199.0" />
+                        <Label layoutX="88.0" layoutY="103.0" text="Batiment" />
+                        <Button layoutX="87.0" layoutY="127.0" mnemonicParsing="false" text="Choirsir batiment" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Créer PUB">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Button layoutX="519.0" layoutY="287.0" mnemonicParsing="false" text="Créer Pub" />
+                        <TextArea layoutX="33.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" text="&#10;" />
+                        <Label layoutX="33.0" layoutY="83.0" text="Description" />
+                        <Label layoutX="33.0" layoutY="14.0" text="Type" />
+                        <ComboBox layoutX="33.0" layoutY="31.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Voir Stat">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Button layoutX="519.0" layoutY="287.0" mnemonicParsing="false" text="Créer Pub" />
+                        <Label layoutX="34.0" layoutY="36.0" text="Nombre de Client" />
+                        <Label layoutX="243.0" layoutY="36.0" text="Nombre de Biens" />
+                        <Label layoutX="261.0" layoutY="53.0" text="Terrain" />
+                        <Label layoutX="261.0" layoutY="70.0" text="Maison" />
+                        <Label layoutX="260.0" layoutY="87.0" text="Appart" />
+                        <Label layoutX="34.0" layoutY="156.0" text="Nombre de Mandat" />
+                        <Label layoutX="34.0" layoutY="198.0" text="Nombre de Promesse" />
+                        <Label layoutX="70.0" layoutY="53.0" text="Entreprise" />
+                        <Label layoutX="70.0" layoutY="71.0" text="Personne" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
