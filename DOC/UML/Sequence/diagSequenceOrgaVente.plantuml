@@ -4,7 +4,11 @@
 hide footbox
 
 participant ":Agence" As A
+participant ":Promesse" As Pro
 
 [-> A : clic
 A -> A : organiserVente()
+A -> Pro : creerPromesse()
+Pro --> A :
+
 @enduml

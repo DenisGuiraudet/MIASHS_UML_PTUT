@@ -3,11 +3,11 @@
 
 hide footbox
 
-participant ":Personne" As Per
+participant ":Client" As C
 participant ":Envie" As E
 
-[-> Per : clic
-Per -> E : creerEnvie()
-E --> Per :
+[-> C : clic
+C -> E : creerEnvie()
+E --> C :
 
 @enduml

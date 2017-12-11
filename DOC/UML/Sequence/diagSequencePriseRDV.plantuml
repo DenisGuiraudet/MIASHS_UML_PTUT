@@ -4,11 +4,11 @@
 hide footbox
 
 participant ":Agence" As A
-participant ":Personne" As Per
+participant ":Client" As C
 
 [-> A : clic
-A -> Per : creerPersonne()
-Per --> A :
+A -> C : creerClient()
+C --> A :
 A -> A : priseRdvVendeur()
 
 @enduml

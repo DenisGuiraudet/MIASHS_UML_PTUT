@@ -7,8 +7,8 @@ rectangle "Logiciel" {
 
   (Organiser rendez-vous)
 
-  Agence --> (Ajouter personne)
-  Agence --> (Modifier personne)
+  Agence --> (Ajouter client)
+  Agence --> (Modifier client)
   Agence --> (Organiser rendez-vous)
 
   rectangle "LogiVente"{

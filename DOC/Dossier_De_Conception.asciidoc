@@ -40,9 +40,75 @@ image::UML/diagActivity.svg[Diagramme d'Activité]
 Séquence
 ~~~~~~~~
 
+PriseRDV
+^^^^^^^^
+
 So much fun
 
-image::UML/diagSequence.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequencePriseRDV.svg[Diagramme de Séquence]
+
+Bien
+^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceBien.svg[Diagramme de Séquence]
+
+Mandat
+^^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceMandat.svg[Diagramme de Séquence]
+
+Envie
+^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceEnvie.svg[Diagramme de Séquence]
+
+Correspond
+^^^^^^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceCorrespond.svg[Diagramme de Séquence]
+
+OrgaVisite
+^^^^^^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceOrgaVisite.svg[Diagramme de Séquence]
+
+OrgaVente
+^^^^^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceOrgaVente.svg[Diagramme de Séquence]
+
+Promesse
+^^^^^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequencePromesse.svg[Diagramme de Séquence]
+
+Pub
+^^^
+
+So much fun
+
+image::UML/Sequence/diagSequencePub.svg[Diagramme de Séquence]
+
+Stat
+^^^^
+
+So much fun
+
+image::UML/Sequence/diagSequenceStat.svg[Diagramme de Séquence]
 
 Choix techniques
 ----------------

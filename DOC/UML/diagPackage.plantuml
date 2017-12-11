@@ -6,7 +6,6 @@ package app {
   folder agence [
 
     +Agence()
-    +Envie()
     +Mandat()
     +Promesse()
     +Notaire()
@@ -26,8 +25,10 @@ package app {
 
   folder user [
 
+    +Client()
     +Personne()
     +Entreprise()
+    +Envie()
 
   ]
 

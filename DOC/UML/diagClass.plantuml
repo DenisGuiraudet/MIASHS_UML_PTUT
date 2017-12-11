@@ -3,12 +3,15 @@
 
 package user {
 
-  class Personne {
+  abstract class Client {
     -String nom
     -String adresse
     -Int telephone
     -String email
-    +creerEnvie(Personne, Envie) : void
+    +creerEnvie(Envie) : void
+  }
+
+  class Personne {
   }
 
   class Entreprise {
@@ -16,7 +19,8 @@ package user {
     -Int numSiren
   }
 
-  Entreprise -up-|> Personne
+  Personne -up-|> Client
+  Entreprise -up-|> Client
 
   class Envie {
     -String type
@@ -26,7 +30,7 @@ package user {
     -Int nbPieces
   }
 
-  Personne *--"*" Envie : "listeEnvie"
+  Client *--"*" Envie : "listeEnvie"
 
 }
 
@@ -34,22 +38,22 @@ package agence {
 
   class Agence {
     -String nom
-    -HashSet<Date, Personne> listeRdvVendeur
-    +creerPersonne(String, String, Int, String) : void
-    +priseRdvVendeur(Personne, Date) : void
+    -HashSet<Date, Client> listeRdvVendeur
+    +creerClient(String, String, Int, String) : void
+    +priseRdvVendeur(Client, Date) : void
     +creerBien() : void
-    +creerMandat(Personne, Mandat) : void
-    +organiserVisite(Personne, Mandat, Date) : void
-    +organiserVente(Personne, Mandat, Date) : void
+    +creerMandat(Client, Mandat) : void
+    +organiserVisite(Client, Mandat, Date) : void
+    +organiserVente(Client, Mandat, Date) : void
     -creerPromesse(Promesse) : void
     +voirStats() : void
     +creerDocument() : void
   }
 
-  Personne "*"-left-* Agence : "listePersonne"
+  Client "*"-left-* Agence : "listeClient"
 
   class Mandat {
-    -HashSet<Date, Personne> listeRdvVisite
+    -HashSet<Date, Client> listeRdvVisite
     -Int prix
     -Date vente
     -Date debut
@@ -68,8 +72,8 @@ package agence {
   Agence *--"*" Mandat : "listeMandat"
   Agence *--"*" Promesse : "listePromesse"
 
-  Mandat -->"1" Personne : "vendeur"
-  Promesse -->"1" Personne : "acheteur"
+  Mandat -->"1" Client : "vendeur"
+  Promesse -->"1" Client : "acheteur"
 
   class Notaire {
     +verserArgent()
