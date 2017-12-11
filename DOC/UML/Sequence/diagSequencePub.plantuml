@@ -1,0 +1,18 @@
+
+@startuml
+
+hide footbox
+
+participant ":Agence" As A
+participant ":AnnoncePub" As AP
+participant ":TypePub" As TP
+
+[-> A : clic
+A -> AP : creerDocument()
+AP --> A :
+
+[-> AP : clic
+AP -> TP : addElem()
+TP --> AP :
+
+@enduml

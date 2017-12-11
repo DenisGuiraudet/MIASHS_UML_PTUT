@@ -1,0 +1,13 @@
+
+@startuml
+
+hide footbox
+
+participant ":Agence" As A
+participant ":Bien" As B
+
+[-> A : clic
+A -> B : creerBien()
+B --> A :
+
+@enduml

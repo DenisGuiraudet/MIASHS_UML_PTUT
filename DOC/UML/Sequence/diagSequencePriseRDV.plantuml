@@ -1,0 +1,14 @@
+
+@startuml
+
+hide footbox
+
+participant ":Agence" As A
+participant ":Personne" As Per
+
+[-> A : clic
+A -> Per : creerPersonne()
+Per --> A :
+A -> A : priseRdvVendeur()
+
+@enduml

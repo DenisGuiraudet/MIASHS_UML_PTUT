@@ -1,0 +1,10 @@
+
+@startuml
+
+hide footbox
+
+participant ":Agence" As A
+
+[-> A : clic
+A -> A : organiserVente()
+@enduml

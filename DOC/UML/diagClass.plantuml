@@ -8,6 +8,7 @@ package user {
     -String adresse
     -Int telephone
     -String email
+    +creerEnvie(Personne, Envie) : void
   }
 
   class Entreprise {
@@ -36,10 +37,10 @@ package agence {
     -HashSet<Date, Personne> listeRdvVendeur
     +creerPersonne(String, String, Int, String) : void
     +priseRdvVendeur(Personne, Date) : void
+    +creerBien() : void
     +creerMandat(Personne, Mandat) : void
-    +creerEnvie(Personne, Envie) : void
-    +organiserVisite(Envie, Mandat, Date) : void
-    +organiserVente(Envie, Mandat, Date) : void
+    +organiserVisite(Personne, Mandat, Date) : void
+    +organiserVente(Personne, Mandat, Date) : void
     -creerPromesse(Promesse) : void
     +voirStats() : void
     +creerDocument() : void
@@ -53,7 +54,6 @@ package agence {
     -Date vente
     -Date debut
     -Date fin
-    -creerBien() : void
   }
 
   class Promesse {

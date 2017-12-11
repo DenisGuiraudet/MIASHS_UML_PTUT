@@ -1,0 +1,13 @@
+
+@startuml
+
+hide footbox
+
+participant ":Personne" As Per
+participant ":Envie" As E
+
+[-> Per : clic
+Per -> E : creerEnvie()
+E --> Per :
+
+@enduml

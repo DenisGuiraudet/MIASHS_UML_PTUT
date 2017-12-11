@@ -1,0 +1,14 @@
+
+@startuml
+
+hide footbox
+
+participant ":Agence" As A
+participant ":Promesse" As Pro
+
+[-> A : clic
+A -> Pro : creerPromesse()
+Pro --> A :
+Pro -> Pro : signerPromesse()
+
+@enduml
