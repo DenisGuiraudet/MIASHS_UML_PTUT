@@ -24,17 +24,17 @@ package agence {
   class Agence {
     -String nom
     -HashSet<Date, Personne> listeRdvVendeur
-    +PriseRdvVendeur(Personne, Date) : void
-    -CreerPersonne(String, String, Int, String) : void
-    +CreerMandat(Personne, Mandat) : void
-    +CreerEnvie(Personne, Envie) : void
-    +Contacter(Envie, Mandat) : void
-    +OrganiserVisite(Envie, Mandat, Date) : void
-    +OrganiserVente(Envie, Mandat, Date) : void
-    -CreerPromesse(Promesse) : void
-    +SignerPromesse(Promesse) : void
-    +VoirStats() : void
-    +CreerDocument() : void
+    +priseRdvVendeur(Personne, Date) : void
+    -creerPersonne(String, String, Int, String) : void
+    +creerMandat(Personne, Mandat) : void
+    +creerEnvie(Personne, Envie) : void
+    +contacter(Envie, Mandat) : void
+    +organiserVisite(Envie, Mandat, Date) : void
+    +organiserVente(Envie, Mandat, Date) : void
+    -creerPromesse(Promesse) : void
+    +signerPromesse(Promesse) : void
+    +voirStats() : void
+    +creerDocument() : void
   }
 
   Personne "*"<-- Agence : "listePersonne"
@@ -53,7 +53,7 @@ package agence {
     -Date vente
     -Date debut
     -Date fin
-    -CreerBien() : void
+    - reerBien() : void
   }
 
   Agence -up->"*" Mandat : "mandat"
@@ -75,7 +75,7 @@ package agence {
   Envie "1"<-- Promesse : "envie"
 
   class Notaire {
-    +VerserArgent()
+    +verserArgent()
   }
 
   Notaire "1"<-- Promesse : "notaire"
@@ -95,19 +95,15 @@ package pub {
   }
 
   class TypeTexte {
-    +addElem() : void
   }
 
   class TypeHtml {
-    +addElem() : void
   }
 
   class TypeImg {
-    +addElem() : void
   }
 
   class TypeVid {
-    +addElem() : void
   }
 
   TypeTexte -up-|> TypePub
@@ -126,7 +122,7 @@ package immo {
     -Double prix
     -Date vente
     -Date[] dispo
-    +Correspondance(Envie) : Double
+    +correspondance(Envie) : Double
   }
 
   class Terrain {

@@ -5,16 +5,44 @@ hide footbox
 title Footer removed
 
 participant ":Agence" As A
+participant ":Personne" As Per
 participant ":Mandat" As M
 participant ":Bien" As B
 participant ":Envie" As E
 participant ":Promesse" As Pro
+participant ":AnnoncePub" As AP
+participant ":TypePub" As TP
 
-A -> A : PriseRdvVendeur()
-A -> A : CreerPersonne()
+A -> A : priseRdvVendeur()
+A -> Per : creerPersonne()
+A -> M : creerMandat()
+M -> B : creerBien()
 
 ...
 
-A -> A : CreerMandat()
+A -> E : creerEnvie()
+
+...
+
+A -> A : contacter()
+
+...
+
+A -> A : organiserVisite()
+
+...
+
+A -> A : organiserVente()
+A -> Pro : creerPromesse()
+A -> Pro : signerPromesse()
+
+...
+
+A -> A : voirStats()
+
+...
+
+A -> AP : creerDocument()
+AP -> TP : addElem()
 
 @enduml
