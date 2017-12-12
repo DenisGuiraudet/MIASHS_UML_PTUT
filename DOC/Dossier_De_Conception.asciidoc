@@ -1,6 +1,8 @@
 Dossier de conception
 =====================
 
+:source-highlighter: rouge
+
 Vous trouverez au cours de ce document
 toute la documentation néccessaire à la bonne
 compréhension de notre environnement de travail.
@@ -93,7 +95,7 @@ Création d'une Pub
 image::UML/Sequence/diagSequencePub.svg[Diagramme de Séquence]
 
 Affichage de Statistiques
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceStat.svg[Diagramme de Séquence]
 
@@ -110,3 +112,45 @@ Interface
 ---------
 
 NOTE: L'interface est sujette à des changements.
+
+:numbered!:
+
+Création de Personne
+^^^^^^^^^^^^^^^^^^^^
+
+image::IHM/Personne.PNG[Interface]
+
+Création de Bien
+^^^^^^^^^^^^^^^^
+
+image::IHM/Bien.PNG[Interface]
+
+Création de Mandat
+^^^^^^^^^^^^^^^^^^
+
+image::IHM/Mandat.PNG[Interface]
+
+Création de Promesse
+^^^^^^^^^^^^^^^^^^^^
+
+image::IHM/Promesse.PNG[Interface]
+
+Création d'Envie
+^^^^^^^^^^^^^^^^
+
+image::IHM/Envie.PNG[Interface]
+
+Organisation de RDV
+^^^^^^^^^^^^^^^^^^^
+
+image::IHM/RDV.PNG[Interface]
+
+Création de Pub
+^^^^^^^^^^^^^^^
+
+image::IHM/Pub.PNG[Interface]
+
+Affichage de Statistique
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+image::IHM/Stat.PNG[Interface]
