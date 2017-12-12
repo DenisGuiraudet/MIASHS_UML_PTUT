@@ -1,5 +1,7 @@
 Dossier de conception
 =====================
+Matthieu Orriere, Denis Guiraudet
+14/12/2017
 
 :source-highlighter: rouge
 
