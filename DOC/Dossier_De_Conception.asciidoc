@@ -1,8 +1,9 @@
 Dossier de conception
 =====================
 
-NOTE: Vous trouverez au cours de ce documents
-nombre de diagrammes pour vous éclairer.
+Vous trouverez au cours de ce document
+toute la documentation néccessaire à la bonne
+compréhension de notre environnement de travail.
 
 :numbered:
 
@@ -12,107 +13,100 @@ Diagrammes
 Cas d'utilisation
 ~~~~~~~~~~~~~~~~~
 
-So much fun
+Le diagramme suivant développe les différentes possibilités d'utilisation d'un membre de l'agence.
 
 image::UML/diagUseCase.svg[Diagramme des Cas d'utilisation]
 
 Paquetage
 ~~~~~~~~~
 
-So much fun
+Ce diagramme montre la structure générale du projet.
 
 image::UML/diagPackage.svg[Diagramme de Paquetage]
 
 Classe
 ~~~~~~
 
-Utilisation du patterne Strategy ? (à refaire pour pub)
+Ce diagramme est plus comptet que celui de paquetage.
+Nous avons utilisés le patron Strategy pour "TypePub", "BienImmo" et "Client".
 
 image::UML/diagClass.svg[Diagramme de Classe]
 
 Activité
 ~~~~~~~~
 
-Enregistrement d'une vente.
+Le diagramme suivant décrit l'enregistrement d'une vente.
 
 image::UML/diagActivity.svg[Diagramme d'Activité]
 
 Séquence
 ~~~~~~~~
 
-PriseRDV
-^^^^^^^^
+Les diagrammes suivants décrivent l'ordre de déclenchement des
+fonctions définies dans le diagramme de classe par rapport aux différents cas d'utilisation.
 
-So much fun
+:numbered!:
+
+Prise de RDV
+^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequencePriseRDV.svg[Diagramme de Séquence]
 
-Bien
-^^^^
-
-So much fun
+Création de Bien
+^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceBien.svg[Diagramme de Séquence]
 
-Mandat
-^^^^^^
-
-So much fun
+Création d'un Mandat
+^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceMandat.svg[Diagramme de Séquence]
 
-Envie
-^^^^^
-
-So much fun
+Création d'une Envie
+^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceEnvie.svg[Diagramme de Séquence]
 
-Correspond
-^^^^^^^^^^
-
-So much fun
+Test de Correspondance
+^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceCorrespond.svg[Diagramme de Séquence]
 
-OrgaVisite
-^^^^^^^^^^
-
-So much fun
+Organisation d'une Visite
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceOrgaVisite.svg[Diagramme de Séquence]
 
-OrgaVente
-^^^^^^^^^
-
-So much fun
+Organisation d'une Vente
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceOrgaVente.svg[Diagramme de Séquence]
 
-Promesse
-^^^^^^^^
-
-So much fun
+Création d'une Promesse
+^^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequencePromesse.svg[Diagramme de Séquence]
 
-Pub
-^^^
-
-So much fun
+Création d'une Pub
+^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequencePub.svg[Diagramme de Séquence]
 
-Stat
-^^^^
-
-So much fun
+Affichage de Statistiques
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 image::UML/Sequence/diagSequenceStat.svg[Diagramme de Séquence]
+
+:numbered:
 
 Choix techniques
 ----------------
 
-Programme en Java,
-Utilisation de la librairie graphique JavaFX,
-Base de donnée locale avec des fichiers JSON.
+- Programme en Java
+- Utilisation de la librairie graphique JavaFX
+- Base de donnée locale avec des fichiers JSON
+
+Interface
+---------
+
+NOTE: L'interface est sujette à des changements.
