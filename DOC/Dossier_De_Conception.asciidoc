@@ -1,7 +1,7 @@
 Dossier de conception
 =====================
 Matthieu Orriere, Denis Guiraudet
-14/12/2017
+13/12/2017
 
 :source-highlighter: rouge
 
@@ -19,14 +19,14 @@ Cas d'utilisation
 
 Le diagramme suivant développe les différentes possibilités d'utilisation d'un membre de l'agence.
 
-image::UML/diagUseCase.svg[Diagramme des Cas d'utilisation]
+image::UML/diagUseCase.svg[Diagramme des Cas d'utilisation, align="center"]
 
 Paquetage
 ~~~~~~~~~
 
 Ce diagramme montre la structure générale du projet.
 
-image::UML/diagPackage.svg[Diagramme de Paquetage]
+image::UML/diagPackage.svg[Diagramme de Paquetage, align="center"]
 
 Classe
 ~~~~~~
@@ -34,14 +34,14 @@ Classe
 Ce diagramme est plus comptet que celui de paquetage.
 Nous avons utilisés le patron Strategy pour "TypePub", "BienImmo" et "Client".
 
-image::UML/diagClass.svg[Diagramme de Classe]
+image::UML/diagClass.svg[Diagramme de Classe, align="center"]
 
 Activité
 ~~~~~~~~
 
 Le diagramme suivant décrit l'enregistrement d'une vente.
 
-image::UML/diagActivity.svg[Diagramme d'Activité]
+image::UML/diagActivity.svg[Diagramme d'Activité, align="center"]
 
 Séquence
 ~~~~~~~~
@@ -51,55 +51,60 @@ fonctions définies dans le diagramme de classe par rapport aux différents cas 
 
 :numbered!:
 
+Création d'un client
+^^^^^^^^^^^^^^^^^^^^
+
+image::UML/Sequence/diagSequenceClient.svg[Diagramme de Séquence, align="center"]
+
 Prise de RDV
 ^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequencePriseRDV.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequencePriseRDV.svg[Diagramme de Séquence, align="center"]
 
 Création de Bien
 ^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceBien.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceBien.svg[Diagramme de Séquence, align="center"]
 
 Création d'un Mandat
 ^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceMandat.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceMandat.svg[Diagramme de Séquence, align="center"]
 
 Création d'une Envie
 ^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceEnvie.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceEnvie.svg[Diagramme de Séquence, align="center"]
 
 Test de Correspondance
 ^^^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceCorrespond.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceCorrespond.svg[Diagramme de Séquence, align="center"]
 
 Organisation d'une Visite
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceOrgaVisite.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceOrgaVisite.svg[Diagramme de Séquence, align="center"]
 
 Organisation d'une Vente
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceOrgaVente.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceOrgaVente.svg[Diagramme de Séquence, align="center"]
 
 Création d'une Promesse
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequencePromesse.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequencePromesse.svg[Diagramme de Séquence, align="center"]
 
 Création d'une Pub
 ^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequencePub.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequencePub.svg[Diagramme de Séquence, align="center"]
 
 Affichage de Statistiques
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-image::UML/Sequence/diagSequenceStat.svg[Diagramme de Séquence]
+image::UML/Sequence/diagSequenceStat.svg[Diagramme de Séquence, align="center"]
 
 :numbered:
 
@@ -107,8 +112,8 @@ Choix techniques
 ----------------
 
 - Programme en Java
-- Utilisation de la librairie graphique JavaFX
-- Base de donnée locale avec des fichiers JSON
+- Utilisation de la librairie graphique JavaFX (utilisation du logiciel SceneBuilder)
+- Base de donnée locale avec des fichiers JSON OU en ligne avec FireBase
 
 Interface
 ---------
@@ -120,39 +125,39 @@ NOTE: L'interface est sujette à des changements.
 Création de Personne
 ~~~~~~~~~~~~~~~~~~~~
 
-image::IHM/Personne.PNG[Interface]
+image::IHM/Personne.PNG[Interface, align="center"]
 
 Création de Bien
 ~~~~~~~~~~~~~~~~
 
-image::IHM/Bien.PNG[Interface]
+image::IHM/Bien.PNG[Interface, align="center"]
 
 Création de Mandat
 ~~~~~~~~~~~~~~~~~~
 
-image::IHM/Mandat.PNG[Interface]
+image::IHM/Mandat.PNG[Interface, align="center"]
 
 Création de Promesse
 ~~~~~~~~~~~~~~~~~~~~
 
-image::IHM/Promesse.PNG[Interface]
+image::IHM/Promesse.PNG[Interface, align="center"]
 
 Création d'Envie
 ~~~~~~~~~~~~~~~~
 
-image::IHM/Envie.PNG[Interface]
+image::IHM/Envie.PNG[Interface, align="center"]
 
 Organisation de RDV
 ~~~~~~~~~~~~~~~~~~~
 
-image::IHM/RDV.PNG[Interface]
+image::IHM/RDV.PNG[Interface, align="center"]
 
 Création de Pub
 ~~~~~~~~~~~~~~~
 
-image::IHM/Pub.PNG[Interface]
+image::IHM/Pub.PNG[Interface, align="center"]
 
 Affichage de Statistique
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-image::IHM/Stat.PNG[Interface]
+image::IHM/Stat.PNG[Interface, align="center"]
