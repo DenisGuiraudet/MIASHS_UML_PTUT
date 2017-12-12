@@ -116,41 +116,41 @@ NOTE: L'interface est sujette à des changements.
 :numbered!:
 
 Création de Personne
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 image::IHM/Personne.PNG[Interface]
 
 Création de Bien
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 image::IHM/Bien.PNG[Interface]
 
 Création de Mandat
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 image::IHM/Mandat.PNG[Interface]
 
 Création de Promesse
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 image::IHM/Promesse.PNG[Interface]
 
 Création d'Envie
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 image::IHM/Envie.PNG[Interface]
 
 Organisation de RDV
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 image::IHM/RDV.PNG[Interface]
 
 Création de Pub
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 image::IHM/Pub.PNG[Interface]
 
 Affichage de Statistique
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 image::IHM/Stat.PNG[Interface]
