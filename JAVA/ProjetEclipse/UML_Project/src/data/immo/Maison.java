@@ -10,6 +10,7 @@ public class Maison extends BienImmo {
 	private int nbPieces;
 	private int nbEtages;
 	private String chauffage;
+	private Terrain terrain;
 
 	public Maison(int numV, String adresseV, String orientationV, Double prixV, Date venteV,
 			Double surfaceHabitableV, int nbPiecesV, int nbEtagesV, String chauffageV) {
@@ -20,6 +21,7 @@ public class Maison extends BienImmo {
 		this.setNbPieces(nbPiecesV);
 		this.setNbEtages(nbEtagesV);
 		this.setChauffage(chauffageV);
+		this.setTerrain(null);
 
 	}
 	
@@ -86,6 +88,20 @@ public class Maison extends BienImmo {
 	 */
 	public void setChauffage(String chauffage) {
 		this.chauffage = chauffage;
+	}
+
+	/**
+	 * @return the terrain
+	 */
+	public Terrain getTerrain() {
+		return terrain;
+	}
+
+	/**
+	 * @param terrain the terrain to set
+	 */
+	public void setTerrain(Terrain terrain) {
+		this.terrain = terrain;
 	}
 
 }

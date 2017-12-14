@@ -3,6 +3,7 @@ package data.agence;
 import java.util.Date;
 import java.util.HashMap;
 
+import data.immo.BienImmo;
 import data.user.Client;
 
 public class Mandat {
@@ -12,14 +13,19 @@ public class Mandat {
 	private Date debut;
 	private Date fin;
 	private HashMap<Date, Client> listeRdvVisite;
+	private BienImmo bien;
+	private Client vendeur;
 	
-	public Mandat(Double prixV, Date venteV, Date debutV, Date finV) {
+	public Mandat(Double prixV, Date venteV, Date debutV, Date finV,
+			BienImmo bienV, Client vendeurV) {
 
 		this.setPrix(prixV);
 		this.setVente(venteV);
 		this.setDebut(debutV);
 		this.setFin(finV);
 		this.listeRdvVisite = new HashMap<Date, Client>();
+		this.setBien(bienV);
+		this.setVendeur(vendeurV);
 		
 	}
 
@@ -83,6 +89,34 @@ public class Mandat {
 		
 		listeRdvVisite.put(date, client);
 		
+	}
+
+	/**
+	 * @return the bien
+	 */
+	public BienImmo getBien() {
+		return bien;
+	}
+
+	/**
+	 * @param bien the bien to set
+	 */
+	public void setBien(BienImmo bien) {
+		this.bien = bien;
+	}
+
+	/**
+	 * @return the vendeur
+	 */
+	public Client getVendeur() {
+		return vendeur;
+	}
+
+	/**
+	 * @param vendeur the vendeur to set
+	 */
+	public void setVendeur(Client vendeur) {
+		this.vendeur = vendeur;
 	}
 
 }

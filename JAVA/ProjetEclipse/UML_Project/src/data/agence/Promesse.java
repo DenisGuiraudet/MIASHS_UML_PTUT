@@ -2,6 +2,9 @@ package data.agence;
 
 import java.util.Date;
 
+import data.immo.BienImmo;
+import data.user.Client;
+
 public class Promesse {
 	
 	private Double prixVerseVendeur;
@@ -9,14 +12,21 @@ public class Promesse {
 	private Date vente;
 	private Double commissionAgence;
 	private Double fraisVente;
+	private BienImmo bien;
+	private Client acheteur;
+	private Notaire notaire;
 	
-	public Promesse(Double prixVerseVendeurV, String adresseNotaireV, Date venteV, Double commissionAgenceV, Double fraisVenteV) {
+	public Promesse(Double prixVerseVendeurV, String adresseNotaireV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
+			BienImmo bienV, Client acheteurV, Notaire notaireV) {
 
 		this.setPrixVerseVendeur(prixVerseVendeurV);
 		this.setAdresseNotaire(adresseNotaireV);
 		this.setVente(venteV);
 		this.setCommissionAgence(commissionAgenceV);
 		this.setFraisVente(fraisVenteV);
+		this.setBien(bienV);
+		this.setAcheteur(acheteurV);
+		this.setNotaire(notaireV);
 		
 	}
 	
@@ -94,6 +104,48 @@ public class Promesse {
 	 */
 	public void setFraisVente(Double fraisVente) {
 		this.fraisVente = fraisVente;
+	}
+
+	/**
+	 * @return the bien
+	 */
+	public BienImmo getBien() {
+		return bien;
+	}
+
+	/**
+	 * @param bien the bien to set
+	 */
+	public void setBien(BienImmo bien) {
+		this.bien = bien;
+	}
+
+	/**
+	 * @return the acheteur
+	 */
+	public Client getAcheteur() {
+		return acheteur;
+	}
+
+	/**
+	 * @param acheteur the acheteur to set
+	 */
+	public void setAcheteur(Client acheteur) {
+		this.acheteur = acheteur;
+	}
+
+	/**
+	 * @return the notaire
+	 */
+	public Notaire getNotaire() {
+		return notaire;
+	}
+
+	/**
+	 * @param notaire the notaire to set
+	 */
+	public void setNotaire(Notaire notaire) {
+		this.notaire = notaire;
 	}
 
 }

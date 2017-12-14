@@ -1,11 +1,14 @@
 package data.user;
 
+import java.util.ArrayList;
+
 public abstract class Client {
 
 	private String nom;
 	private String adresse;
 	private String telephone;
 	private String email;
+	private ArrayList<Envie> listeEnvie;
 	
 	public Client(String nomV, String adresseV, String telephoneV, String emailV) {
 		
@@ -13,12 +16,13 @@ public abstract class Client {
 		this.setAdresse(adresseV);
 		this.setTelephone(telephoneV);
 		this.setEmail(emailV);
+		this.listeEnvie = new ArrayList<Envie>();
 		
 	}
 	
-	public void creerEnvie(Envie envie) {
+	public void ajouterEnvie(Envie envie) {
 		
-		
+		this.listeEnvie.add(envie);
 		
 	}
 

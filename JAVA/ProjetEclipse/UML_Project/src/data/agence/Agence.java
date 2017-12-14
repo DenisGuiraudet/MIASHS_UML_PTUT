@@ -1,19 +1,31 @@
 package data.agence;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import data.immo.BienImmo;
 import data.user.Client;
 
 public class Agence {
 	
 	private String nom;
 	private HashMap<Date, Client> listeRdvVendeur;
+	private ArrayList<BienImmo> listeBien;
+	private ArrayList<Client> listeClient;
+	private ArrayList<Mandat> listeMandat;
+	private ArrayList<Promesse> listePromesse;
+	private ArrayList<Notaire> listeNotaire;
 	
 	public Agence(String nomV) {
 
 		this.nom = nomV;
 		this.listeRdvVendeur = new HashMap<Date, Client>();
+		this.listeBien = new ArrayList<BienImmo>();
+		this.listeClient = new ArrayList<Client>();
+		this.listeMandat = new ArrayList<Mandat>();
+		this.listePromesse = new ArrayList<Promesse>();
+		this.listeNotaire = new ArrayList<Notaire>();
 		
 	}
 	
