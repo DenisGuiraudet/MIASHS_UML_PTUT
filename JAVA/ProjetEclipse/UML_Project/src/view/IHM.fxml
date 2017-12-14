@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
   <children>
       <TabPane prefHeight="438.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -49,7 +50,7 @@
                         <TextField layoutX="14.0" layoutY="31.0" />
                         <Button layoutX="352.0" layoutY="234.0" mnemonicParsing="false" text="Créer bien" />
                         <ChoiceBox layoutX="16.0" layoutY="87.0" prefHeight="25.0" prefWidth="148.0" />
-                        <Label layoutX="14.0" layoutY="62.0" text="Type" />
+                        <Label layoutX="14.0" layoutY="74.0" text="Type" />
                         <Label layoutX="206.0" layoutY="17.0" text="Orientation" />
                         <TextField layoutX="206.0" layoutY="34.0" />
                         <Label layoutX="390.0" layoutY="17.0" text="Surface Sol" />
@@ -78,7 +79,7 @@
                         <Button layoutX="17.0" layoutY="261.0" mnemonicParsing="false" text="Créer mandat" />
                         <Button layoutX="14.0" layoutY="41.0" mnemonicParsing="false" text="Liste des personne" />
                         <Label layoutX="222.0" layoutY="26.0" text="Nom" />
-                        <Label layoutX="222.0" layoutY="54.0" text="Adresse" />
+                        <Label layoutX="222.0" layoutY="56.0" text="Adresse" />
                         <Label layoutX="15.0" layoutY="82.0" text="Biens" />
                         <Button layoutX="14.0" layoutY="106.0" mnemonicParsing="false" text="Liste des biens" />
                         <Label layoutX="222.0" layoutY="91.0" text="Adresse" />
@@ -95,7 +96,7 @@
                             <TableColumn prefWidth="302.0" text="Date" />
                           </columns>
                         </TableView>
-                        <TextField layoutX="275.0" layoutY="22.0" />
+                        <TextField layoutX="275.0" layoutY="18.0" />
                         <TextField layoutX="275.0" layoutY="50.0" />
                         <TextField layoutX="275.0" layoutY="87.0" />
                         <TextField layoutX="275.0" layoutY="115.0" />
@@ -165,7 +166,7 @@
                         <Button layoutX="446.0" layoutY="266.0" mnemonicParsing="false" text="Créer RDV" />
                         <Button layoutX="14.0" layoutY="45.0" mnemonicParsing="false" text="Choirsir personne" />
                         <Label layoutX="222.0" layoutY="30.0" text="Nom" />
-                        <Label layoutX="222.0" layoutY="49.0" text="Adresse" />
+                        <Label layoutX="222.0" layoutY="60.0" text="Adresse" />
                         <Label layoutX="15.0" layoutY="160.0" text="Date" />
                         <DatePicker layoutX="14.0" layoutY="178.0" />
                         <Label layoutX="15.0" layoutY="82.0" text="Batiment" />
@@ -207,4 +208,8 @@
         </tabs>
       </TabPane>
   </children>
+   <stylesheets>
+      <URL value="@./material-fx-v0_3.css" />
+      <URL value="@./materialfx-toggleswitch.css" />
+   </stylesheets>
 </VBox>

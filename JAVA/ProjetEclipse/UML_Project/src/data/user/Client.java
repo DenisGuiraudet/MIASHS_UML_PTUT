@@ -4,10 +4,10 @@ public abstract class Client {
 
 	private String nom;
 	private String adresse;
-	private int telephone;
+	private String telephone;
 	private String email;
 	
-	public Client(String nomV, String adresseV, int telephoneV, String emailV) {
+	public Client(String nomV, String adresseV, String telephoneV, String emailV) {
 		
 		this.setNom(nomV);
 		this.setAdresse(adresseV);
@@ -53,14 +53,14 @@ public abstract class Client {
 	/**
 	 * @return the telephone
 	 */
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
 	/**
 	 * @param telephone the telephone to set
 	 */
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 

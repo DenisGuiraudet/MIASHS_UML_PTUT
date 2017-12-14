@@ -7,39 +7,33 @@ import data.user.Client;
 
 public class Mandat {
 	
-	private HashMap<Date, Client> listeRdvVisite;
-	private int prix;
+	private Double prix;
 	private Date vente;
 	private Date debut;
 	private Date fin;
+	private HashMap<Date, Client> listeRdvVisite;
 	
-	public Mandat(int prixV, Date venteV, Date debutV, Date finV) {
+	public Mandat(Double prixV, Date venteV, Date debutV, Date finV) {
 
-		this.listeRdvVisite = new HashMap<Date, Client>();
 		this.setPrix(prixV);
 		this.setVente(venteV);
 		this.setDebut(debutV);
 		this.setFin(finV);
-		
-	}
-	
-	public void addRdvVisite(Date date, Client client) {
-		
-		listeRdvVisite.put(date, client);
+		this.listeRdvVisite = new HashMap<Date, Client>();
 		
 	}
 
 	/**
 	 * @return the prix
 	 */
-	public int getPrix() {
+	public Double getPrix() {
 		return prix;
 	}
 
 	/**
 	 * @param prix the prix to set
 	 */
-	public void setPrix(int prix) {
+	public void setPrix(Double prix) {
 		this.prix = prix;
 	}
 
@@ -83,6 +77,12 @@ public class Mandat {
 	 */
 	public void setFin(Date fin) {
 		this.fin = fin;
+	}
+	
+	public void addRdvVisite(Date date, Client client) {
+		
+		listeRdvVisite.put(date, client);
+		
 	}
 
 }
