@@ -9,17 +9,22 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import data.agence.Notaire;
+
 /**
  * @author guira
  *
  */
 public class NotaireTest {
+	
+	Notaire notaire;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		notaire = new Notaire("", "");
 	}
 
 	/**
@@ -34,7 +39,7 @@ public class NotaireTest {
 	 */
 	@Test
 	public void testNotaire() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull("Notaire", notaire);
 	}
 
 	/**
@@ -42,38 +47,6 @@ public class NotaireTest {
 	 */
 	@Test
 	public void testVerserArgent() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Notaire#getNom()}.
-	 */
-	@Test
-	public void testGetNom() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Notaire#setNom(java.lang.String)}.
-	 */
-	@Test
-	public void testSetNom() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Notaire#getAdresse()}.
-	 */
-	@Test
-	public void testGetAdresse() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Notaire#setAdresse(java.lang.String)}.
-	 */
-	@Test
-	public void testSetAdresse() {
 		fail("Not yet implemented"); // TODO
 	}
 

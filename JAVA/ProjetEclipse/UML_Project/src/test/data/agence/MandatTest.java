@@ -5,21 +5,28 @@ package test.data.agence;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import data.agence.Mandat;
 
 /**
  * @author guira
  *
  */
 public class MandatTest {
+	
+	Mandat mandat;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		mandat = new Mandat(0.0, new Date(), new Date(), new Date(), null, null);
 	}
 
 	/**
@@ -34,102 +41,6 @@ public class MandatTest {
 	 */
 	@Test
 	public void testMandat() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getPrix()}.
-	 */
-	@Test
-	public void testGetPrix() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setPrix(java.lang.Double)}.
-	 */
-	@Test
-	public void testSetPrix() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getVente()}.
-	 */
-	@Test
-	public void testGetVente() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setVente(java.util.Date)}.
-	 */
-	@Test
-	public void testSetVente() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getDebut()}.
-	 */
-	@Test
-	public void testGetDebut() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setDebut(java.util.Date)}.
-	 */
-	@Test
-	public void testSetDebut() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getFin()}.
-	 */
-	@Test
-	public void testGetFin() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setFin(java.util.Date)}.
-	 */
-	@Test
-	public void testSetFin() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getBien()}.
-	 */
-	@Test
-	public void testGetBien() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setBien(data.immo.BienImmo)}.
-	 */
-	@Test
-	public void testSetBien() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#getVendeur()}.
-	 */
-	@Test
-	public void testGetVendeur() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.agence.Mandat#setVendeur(data.user.Client)}.
-	 */
-	@Test
-	public void testSetVendeur() {
 		fail("Not yet implemented"); // TODO
 	}
 

@@ -82,4 +82,11 @@ public abstract class Client {
 		this.email = email;
 	}
 	
+	/**
+	 * @return the listeEnvie
+	 */
+	public ArrayList<Envie> getListeEnvie() {
+		return listeEnvie;
+	}
+	
 }

@@ -137,4 +137,46 @@ public class Agence {
 		this.nom = nom;
 	}
 	
+	/**
+	 * @return the listeBien
+	 */
+	public ArrayList<BienImmo> getListeBien() {
+		return listeBien;
+	}
+	
+	/**
+	 * @return the listeClient
+	 */
+	public ArrayList<Client> getListeClient() {
+		return listeClient;
+	}
+	
+	/**
+	 * @return the listeMandat
+	 */
+	public ArrayList<Mandat> getListeMandat() {
+		return listeMandat;
+	}
+	
+	/**
+	 * @return the listePromesse
+	 */
+	public ArrayList<Promesse> getListePromesse() {
+		return listePromesse;
+	}
+	
+	/**
+	 * @return the listeNotaire
+	 */
+	public ArrayList<Notaire> getListeNotaire() {
+		return listeNotaire;
+	}
+	
+	/**
+	 * @return the listeAnnonce
+	 */
+	public ArrayList<AnnoncePub> getListeAnnonce() {
+		return listeAnnonce;
+	}
+	
 }

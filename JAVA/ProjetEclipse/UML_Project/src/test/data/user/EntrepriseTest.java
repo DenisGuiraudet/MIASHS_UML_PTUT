@@ -37,36 +37,4 @@ public class EntrepriseTest {
 		fail("Not yet implemented"); // TODO
 	}
 
-	/**
-	 * Test method for {@link data.user.Entreprise#getFormeJuridique()}.
-	 */
-	@Test
-	public void testGetFormeJuridique() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.user.Entreprise#setFormeJuridique(java.lang.String)}.
-	 */
-	@Test
-	public void testSetFormeJuridique() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.user.Entreprise#getNumSiren()}.
-	 */
-	@Test
-	public void testGetNumSiren() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.user.Entreprise#setNumSiren(java.lang.String)}.
-	 */
-	@Test
-	public void testSetNumSiren() {
-		fail("Not yet implemented"); // TODO
-	}
-
 }

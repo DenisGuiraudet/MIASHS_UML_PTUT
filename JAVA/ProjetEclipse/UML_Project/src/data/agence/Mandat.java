@@ -126,5 +126,25 @@ public class Mandat {
 		this.listeRdvVendeur.put(date, client);
 		
 	}
+	
+	/*
+	 * 
+	private HashMap<Date, Client> listeRdvVisite;
+	private HashMap<Date, Client> listeRdvVendeur;
+	 */
+	
+	/**
+	 * @return the listeRdvVisite
+	 */
+	public HashMap<Date, Client> getListeRdvVisite() {
+		return listeRdvVisite;
+	}
+	
+	/**
+	 * @return the listeRdvVendeur
+	 */
+	public HashMap<Date, Client> getListeRdvVendeur() {
+		return listeRdvVendeur;
+	}
 
 }

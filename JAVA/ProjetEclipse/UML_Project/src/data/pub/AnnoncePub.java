@@ -17,5 +17,12 @@ public class AnnoncePub {
 		this.listePub.add(typePub);
 		
 	}
+	
+	/**
+	 * @return the listePub
+	 */
+	public ArrayList<TypePub> getListePub() {
+		return listePub;
+	}
 
 }

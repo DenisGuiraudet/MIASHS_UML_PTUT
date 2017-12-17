@@ -45,36 +45,4 @@ public class TerrainTest {
 		fail("Not yet implemented"); // TODO
 	}
 
-	/**
-	 * Test method for {@link data.immo.Terrain#getSurfaceSol()}.
-	 */
-	@Test
-	public void testGetSurfaceSol() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.immo.Terrain#setSurfaceSol(java.lang.Double)}.
-	 */
-	@Test
-	public void testSetSurfaceSol() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.immo.Terrain#getLongueurFacade()}.
-	 */
-	@Test
-	public void testGetLongueurFacade() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link data.immo.Terrain#setLongueurFacade(java.lang.Double)}.
-	 */
-	@Test
-	public void testSetLongueurFacade() {
-		fail("Not yet implemented"); // TODO
-	}
-
 }

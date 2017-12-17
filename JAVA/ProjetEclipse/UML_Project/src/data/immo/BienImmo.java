@@ -27,8 +27,6 @@ public abstract class BienImmo {
 	
 	public Double correspondance(Envie envie) {
 		
-		
-		
 		return null;
 		
 	}
@@ -105,6 +103,13 @@ public abstract class BienImmo {
 	
 	public void addDispo(Date dispoV) {
 		this.dispo.add(dispoV);
+	}
+	
+	/**
+	 * @return the dispo
+	 */
+	public ArrayList<Date> getDispo() {
+		return dispo;
 	}
 
 }
