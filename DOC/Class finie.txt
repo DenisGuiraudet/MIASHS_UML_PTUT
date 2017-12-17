@@ -48,8 +48,8 @@ immo
 	Appartement	- en cours : correspondance()
 
 pub
-	AnnonePub	- 
-	TypeTexte	- 
-	TypeHtml	- 
-	TypeImg		- 
-	TypeVid		- 
+	AnnonePub	- finit
+	TypeTexte	- finit
+	TypeHtml	- finit
+	TypeImg		- finit
+	TypeVid		- finit
