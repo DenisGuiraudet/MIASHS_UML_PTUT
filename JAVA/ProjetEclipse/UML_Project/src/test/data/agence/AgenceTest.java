@@ -41,7 +41,7 @@ public class AgenceTest {
 	 */
 	@Test
 	public void testAgence() {
-		assertNotNull("Agence", agence);
+		assertNotNull(agence);
 	}
 
 	/**
