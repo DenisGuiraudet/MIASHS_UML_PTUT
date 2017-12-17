@@ -9,17 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author guira
- *
- */
+import data.user.Envie;
+
 public class EnvieTest {
+	
+	Envie envie;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		envie = new Envie("", 0.0, "", 0.0, 0);
 	}
 
 	/**
@@ -34,7 +35,7 @@ public class EnvieTest {
 	 */
 	@Test
 	public void testEnvie() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(envie);
 	}
 
 }

@@ -9,17 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author guira
- *
- */
+import data.user.Personne;
+
 public class PersonneTest {
+	
+	Personne personne;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		personne = new Personne("", "", "", "");
 	}
 
 	/**
@@ -34,7 +35,7 @@ public class PersonneTest {
 	 */
 	@Test
 	public void testPersonne() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(personne);
 	}
 
 }

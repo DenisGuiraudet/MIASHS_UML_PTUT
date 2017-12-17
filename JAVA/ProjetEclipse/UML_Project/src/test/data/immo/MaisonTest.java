@@ -5,21 +5,25 @@ package test.data.immo;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author guira
- *
- */
+import data.immo.Maison;
+
 public class MaisonTest {
+	
+	Maison maison;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		maison = new Maison(0, "", "", 0.0, new Date(),
+				0.0, 0, 0, "");
 	}
 
 	/**
@@ -42,7 +46,7 @@ public class MaisonTest {
 	 */
 	@Test
 	public void testMaison() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(maison);
 	}
 
 }

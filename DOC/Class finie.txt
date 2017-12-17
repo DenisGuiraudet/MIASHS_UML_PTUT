@@ -1,4 +1,8 @@
 
+https://stackoverflow.com/questions/33881046/how-to-connect-fx-controller-with-main-app
+
+=== PROG ===
+
 agence
 	Agence		- en cours : voirStats()
 	Notaire		- en cours : verserArgent()
@@ -12,15 +16,40 @@ user
 	Envie		- finit
 
 immo
-	BienImmo	- en cours : correspondance()
+	BienImmo	- finit
 	Terrain		- en cours : correspondance()
 	Maison		- en cours : correspondance()
 	Appartement	- en cours : correspondance()
 
 pub
 	AnnonePub	- finit
-	TypePub		- finit : getElem() utile ?
+	TypePub		- finit
 	TypeTexte	- finit
 	TypeHtml	- finit
 	TypeImg		- finit
 	TypeVid		- finit
+
+=== TEST ===
+
+agence
+	Agence		- en cours : voirStats()
+	Notaire		- en cours : verserArgent()
+	Mandat		- finit
+	Promesse	- finit
+
+user
+	Personne	- finit
+	Entreprise	- finit
+	Envie		- finit
+
+immo
+	Terrain		- en cours : correspondance()
+	Maison		- en cours : correspondance()
+	Appartement	- en cours : correspondance()
+
+pub
+	AnnonePub	- 
+	TypeTexte	- 
+	TypeHtml	- 
+	TypeImg		- 
+	TypeVid		- 

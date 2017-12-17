@@ -9,17 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author guira
- *
- */
+import data.user.Entreprise;
+
 public class EntrepriseTest {
+	
+	Entreprise entreprise;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		entreprise = new Entreprise("", "", "", "", "", "");
 	}
 
 	/**
@@ -34,7 +35,7 @@ public class EntrepriseTest {
 	 */
 	@Test
 	public void testEntreprise() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(entreprise);
 	}
 
 }

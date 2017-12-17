@@ -5,21 +5,26 @@ package test.data.agence;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author guira
- *
- */
+import data.agence.Notaire;
+import data.agence.Promesse;
+
 public class PromesseTest {
+	
+	Promesse promesse;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		promesse = new Promesse(0.0, "", new Date(), 0.0, 0.0,
+				null, null, new Notaire("", ""));
 	}
 
 	/**
@@ -34,7 +39,7 @@ public class PromesseTest {
 	 */
 	@Test
 	public void testPromesse() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(promesse);
 	}
 
 	/**
@@ -42,7 +47,9 @@ public class PromesseTest {
 	 */
 	@Test
 	public void testSignerPromesse() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(false, promesse.isEtatFinit());
+		promesse.signerPromesse();
+		assertEquals(true, promesse.isEtatFinit());
 	}
 
 }

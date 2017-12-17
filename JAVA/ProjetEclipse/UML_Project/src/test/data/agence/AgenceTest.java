@@ -17,10 +17,6 @@ import data.pub.TypeImg;
 import data.pub.TypeTexte;
 import data.pub.TypeVid;
 
-/**
- * @author guira
- *
- */
 public class AgenceTest {
 
 	Agence agence;

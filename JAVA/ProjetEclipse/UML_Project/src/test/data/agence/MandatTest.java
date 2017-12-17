@@ -13,10 +13,6 @@ import org.junit.Test;
 
 import data.agence.Mandat;
 
-/**
- * @author guira
- *
- */
 public class MandatTest {
 	
 	Mandat mandat;
@@ -41,7 +37,7 @@ public class MandatTest {
 	 */
 	@Test
 	public void testMandat() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(mandat);
 	}
 
 	/**
@@ -49,7 +45,9 @@ public class MandatTest {
 	 */
 	@Test
 	public void testAddRdvVisite() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(0, mandat.getListeRdvVisite().size());
+		mandat.addRdvVisite(new Date(), null);
+		assertEquals(1, mandat.getListeRdvVisite().size());
 	}
 
 	/**
@@ -57,7 +55,9 @@ public class MandatTest {
 	 */
 	@Test
 	public void testAddRdvVendeur() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(0, mandat.getListeRdvVendeur().size());
+		mandat.addRdvVendeur(new Date(), null);
+		assertEquals(1, mandat.getListeRdvVendeur().size());
 	}
 
 }

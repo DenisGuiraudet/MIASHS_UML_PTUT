@@ -11,10 +11,6 @@ import org.junit.Test;
 
 import data.agence.Notaire;
 
-/**
- * @author guira
- *
- */
 public class NotaireTest {
 	
 	Notaire notaire;
