@@ -9,13 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import data.pub.TypeVid;
+
 public class TypeVidTest {
+	
+	TypeVid typeVid;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		typeVid = new TypeVid("test");
 	}
 
 	/**
@@ -30,7 +35,7 @@ public class TypeVidTest {
 	 */
 	@Test
 	public void testGetElem() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("test", typeVid.getElem());
 	}
 
 	/**
@@ -38,7 +43,7 @@ public class TypeVidTest {
 	 */
 	@Test
 	public void testTypeVid() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(typeVid);
 	}
 
 }

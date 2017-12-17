@@ -9,13 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import data.pub.TypeHtml;
+
 public class TypeHtmlTest {
+	
+	TypeHtml typeHtml;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		typeHtml = new TypeHtml("test");
 	}
 
 	/**
@@ -30,7 +35,7 @@ public class TypeHtmlTest {
 	 */
 	@Test
 	public void testGetElem() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("test", typeHtml.getElem());
 	}
 
 	/**
@@ -38,7 +43,7 @@ public class TypeHtmlTest {
 	 */
 	@Test
 	public void testTypeHtml() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(typeHtml);
 	}
 
 }

@@ -9,13 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import data.pub.TypeImg;
+
 public class TypeImgTest {
+	
+	TypeImg typeImg;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		typeImg = new TypeImg("test");
 	}
 
 	/**
@@ -30,7 +35,7 @@ public class TypeImgTest {
 	 */
 	@Test
 	public void testGetElem() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("test", typeImg.getElem());
 	}
 
 	/**
@@ -38,7 +43,7 @@ public class TypeImgTest {
 	 */
 	@Test
 	public void testTypeImg() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(typeImg);
 	}
 
 }

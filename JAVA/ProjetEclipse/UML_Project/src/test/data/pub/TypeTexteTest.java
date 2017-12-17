@@ -9,13 +9,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import data.pub.TypeTexte;
+
 public class TypeTexteTest {
+	
+	TypeTexte typeTexte;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		typeTexte = new TypeTexte("test");
 	}
 
 	/**
@@ -30,7 +35,7 @@ public class TypeTexteTest {
 	 */
 	@Test
 	public void testGetElem() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("test", typeTexte.getElem());
 	}
 
 	/**
@@ -38,7 +43,7 @@ public class TypeTexteTest {
 	 */
 	@Test
 	public void testTypeTexte() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(typeTexte);
 	}
 
 }
