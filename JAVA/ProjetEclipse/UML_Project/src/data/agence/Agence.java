@@ -8,6 +8,8 @@ import data.immo.Appartement;
 import data.immo.BienImmo;
 import data.immo.Maison;
 import data.immo.Terrain;
+import data.pub.AnnoncePub;
+import data.pub.TypePub;
 import data.user.Client;
 import data.user.Entreprise;
 import data.user.Personne;
@@ -15,22 +17,22 @@ import data.user.Personne;
 public class Agence {
 	
 	private String nom;
-	private HashMap<Date, Client> listeRdvVendeur;
 	private ArrayList<BienImmo> listeBien;
 	private ArrayList<Client> listeClient;
 	private ArrayList<Mandat> listeMandat;
 	private ArrayList<Promesse> listePromesse;
 	private ArrayList<Notaire> listeNotaire;
+	private ArrayList<AnnoncePub> listeAnnonce;
 	
 	public Agence(String nomV) {
 
 		this.nom = nomV;
-		this.listeRdvVendeur = new HashMap<Date, Client>();
 		this.listeBien = new ArrayList<BienImmo>();
 		this.listeClient = new ArrayList<Client>();
 		this.listeMandat = new ArrayList<Mandat>();
 		this.listePromesse = new ArrayList<Promesse>();
 		this.listeNotaire = new ArrayList<Notaire>();
+		this.listeAnnonce = new ArrayList<AnnoncePub>();
 		
 	}
 	
@@ -45,12 +47,6 @@ public class Agence {
 		
 		this.listeClient.add(new Entreprise(nomV, adresseV, telephoneV, emailV, formeJuridiqueV, numSirenV));
 
-	}
-	
-	public void priseRdvVendeur(Date dateV, Client clientV) {
-
-		this.listeRdvVendeur.put(dateV, clientV);
-		
 	}
 	
 	public void creerTerrain(int numV, String adresseV, String orientationV, Double prixV, Date venteV,
@@ -88,11 +84,11 @@ public class Agence {
 	}
 	
 	public void organiserVente(Client clientV, Mandat mandatV, Date dateV) {
-		// TODO : LINK MANDAT TO listeRdvVendeur
 		
-		this.listeRdvVendeur.put(dateV, clientV);
+		mandatV.addRdvVendeur(dateV, clientV);
 		
 		// TODO : creerPromesse();
+		// Peut changer ? => action a part
 		
 	}
 	
@@ -103,15 +99,27 @@ public class Agence {
 		
 	}
 	
+	public void creerNotaire(String nomV, String adresseV) {
+		
+		this.listeNotaire.add(new Notaire(nomV, adresseV));
+		
+	}
+	
 	public void voirStats() {
 		
-		
+		// TODO
 		
 	}
 	
 	public void creerDocument() {
 		
+		this.listeAnnonce.add(new AnnoncePub());
 		
+	}
+	
+	public void ajouterPub(AnnoncePub annoncePubV, TypePub typePubV) {
+		
+		annoncePubV.ajouterPub(typePubV);
 		
 	}
 
@@ -127,12 +135,6 @@ public class Agence {
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public void addRdvVendeur(Date date, Client client) {
-		
-		listeRdvVendeur.put(date, client);
-		
 	}
 	
 }

@@ -75,7 +75,7 @@ public class Launcher extends Application {
         Mandat mandat1 = new Mandat(20.0, new Date(20171122), new Date(20171101), new Date(20171131),
         		maison1, entreprise1);
         
-        Notaire notaire1 = new Notaire();
+        Notaire notaire1 = new Notaire("Jacques", "114 Rue des Champs");
         
         Promesse promesse1 = new Promesse(12.0, "5 Allée de la Cigue", new Date(20171122), 3.69, 14.1,
         		terrain1 ,personne1, notaire1);

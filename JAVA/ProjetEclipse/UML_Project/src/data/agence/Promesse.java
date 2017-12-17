@@ -8,31 +8,33 @@ import data.user.Client;
 public class Promesse {
 	
 	private Double prixVerseVendeur;
-	private String adresseNotaire;
 	private Date vente;
 	private Double commissionAgence;
 	private Double fraisVente;
 	private BienImmo bien;
 	private Client acheteur;
 	private Notaire notaire;
+	private boolean etatFinit;
 	
 	public Promesse(Double prixVerseVendeurV, String adresseNotaireV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
 			BienImmo bienV, Client acheteurV, Notaire notaireV) {
 
 		this.setPrixVerseVendeur(prixVerseVendeurV);
-		this.setAdresseNotaire(adresseNotaireV);
 		this.setVente(venteV);
 		this.setCommissionAgence(commissionAgenceV);
 		this.setFraisVente(fraisVenteV);
 		this.setBien(bienV);
 		this.setAcheteur(acheteurV);
 		this.setNotaire(notaireV);
+		this.setEtatFinit(false);
 		
 	}
 	
 	public void signerPromesse() {
 		
+		notaire.verserArgent();
 		
+		this.setEtatFinit(true);
 		
 	}
 
@@ -48,20 +50,6 @@ public class Promesse {
 	 */
 	public void setPrixVerseVendeur(Double prixVerseVendeur) {
 		this.prixVerseVendeur = prixVerseVendeur;
-	}
-
-	/**
-	 * @return the adresseNotaire
-	 */
-	public String getAdresseNotaire() {
-		return adresseNotaire;
-	}
-
-	/**
-	 * @param adresseNotaire the adresseNotaire to set
-	 */
-	public void setAdresseNotaire(String adresseNotaire) {
-		this.adresseNotaire = adresseNotaire;
 	}
 
 	/**
@@ -146,6 +134,20 @@ public class Promesse {
 	 */
 	public void setNotaire(Notaire notaire) {
 		this.notaire = notaire;
+	}
+
+	/**
+	 * @return the etatFinit
+	 */
+	public boolean isEtatFinit() {
+		return etatFinit;
+	}
+
+	/**
+	 * @param etatFinit the etatFinit to set
+	 */
+	public void setEtatFinit(boolean etatFinit) {
+		this.etatFinit = etatFinit;
 	}
 
 }

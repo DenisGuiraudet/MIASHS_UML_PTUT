@@ -12,9 +12,10 @@ public class Mandat {
 	private Date vente;
 	private Date debut;
 	private Date fin;
-	private HashMap<Date, Client> listeRdvVisite;
 	private BienImmo bien;
 	private Client vendeur;
+	private HashMap<Date, Client> listeRdvVisite;
+	private HashMap<Date, Client> listeRdvVendeur;
 	
 	public Mandat(Double prixV, Date venteV, Date debutV, Date finV,
 			BienImmo bienV, Client vendeurV) {
@@ -23,9 +24,10 @@ public class Mandat {
 		this.setVente(venteV);
 		this.setDebut(debutV);
 		this.setFin(finV);
-		this.listeRdvVisite = new HashMap<Date, Client>();
 		this.setBien(bienV);
 		this.setVendeur(vendeurV);
+		this.listeRdvVisite = new HashMap<Date, Client>();
+		this.listeRdvVendeur = new HashMap<Date, Client>();
 		
 	}
 
@@ -84,12 +86,6 @@ public class Mandat {
 	public void setFin(Date fin) {
 		this.fin = fin;
 	}
-	
-	public void addRdvVisite(Date date, Client client) {
-		
-		listeRdvVisite.put(date, client);
-		
-	}
 
 	/**
 	 * @return the bien
@@ -117,6 +113,18 @@ public class Mandat {
 	 */
 	public void setVendeur(Client vendeur) {
 		this.vendeur = vendeur;
+	}
+	
+	public void addRdvVisite(Date date, Client client) {
+		
+		this.listeRdvVisite.put(date, client);
+		
+	}
+	
+	public void addRdvVendeur(Date date, Client client) {
+		
+		this.listeRdvVendeur.put(date, client);
+		
 	}
 
 }
