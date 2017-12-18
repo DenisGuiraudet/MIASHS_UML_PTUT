@@ -149,7 +149,7 @@ public class Mandat {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getPrix() + "-" + getVente() + "-" + getDebut() + "-" + getFin() + "-" + getBien() + "-" + getVendeur() + "-" + getListeRdvVisite() + "-" + getListeRdvVendeur());
+		return (getPrix() + "-" + getVente() + "-" + getDebut() + "-" + getFin() + "-" + getBien() + "-" + getVendeur() + "-" + getListeRdvVisite() + "-" + getListeRdvVendeur() + "\n");
 	}
 
 }

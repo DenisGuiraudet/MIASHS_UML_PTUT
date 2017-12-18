@@ -36,7 +36,7 @@ public class Launcher extends Application {
     }
 
     public static void main(String[] args) {
-        
+        /*
         System.out.println("Let's do some testing");
         
         // user
@@ -100,7 +100,7 @@ public class Launcher extends Application {
         
         
         System.out.println("Start APP");
-    	
+    	*/
         launch(args);
         
     }

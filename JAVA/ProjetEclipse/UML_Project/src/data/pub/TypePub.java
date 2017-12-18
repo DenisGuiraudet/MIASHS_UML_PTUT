@@ -10,7 +10,7 @@ public abstract class TypePub {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getElem());
+		return (getElem() + "\n");
 	}
 
 }

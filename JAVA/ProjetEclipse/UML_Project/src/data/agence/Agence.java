@@ -80,7 +80,7 @@ public class Agence {
 		
 	}
 	
-	private void creerPromesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
+	public void creerPromesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
 			BienImmo bienV, Client acheteurV, Notaire notaireV) {
 		
 		this.listePromesse.add(new Promesse(prixVerseVendeurV, venteV, commissionAgenceV, fraisVenteV, bienV, acheteurV, notaireV));
@@ -176,7 +176,7 @@ public class Agence {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getNom() + "-" + getListeBien() + "-" + getListeClient() + "-" + getListeMandat() + "-" + getListePromesse() + "-" + getListeNotaire() + "-" + getListeAnnonce() + "-" + getListeRdv());
+		return (getNom() + "-" + getListeBien() + "-" + getListeClient() + "-" + getListeMandat() + "-" + getListePromesse() + "-" + getListeNotaire() + "-" + getListeAnnonce() + "-" + getListeRdv() + "\n");
 	}
 	
 }

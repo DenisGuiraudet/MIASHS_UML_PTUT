@@ -114,7 +114,7 @@ public abstract class BienImmo {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getNum() + "-" + getAdresse() + "-" + getOrientation() + "-" + getPrix() + "-" + getVente() + "-" + getDispo());
+		return (getNum() + "-" + getAdresse() + "-" + getOrientation() + "-" + getPrix() + "-" + getVente() + "-" + getDispo() + "\n");
 	}
 
 }

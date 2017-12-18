@@ -74,7 +74,7 @@ public class Appartement extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "-" + getNbPieces() + "-" + getEtage() + "-" + getChargesMensuelles());
+		return (super.toString() + "   -" + getNbPieces() + "-" + getEtage() + "-" + getChargesMensuelles() + "\n");
 	}
 
 }

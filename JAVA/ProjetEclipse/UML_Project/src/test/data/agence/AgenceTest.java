@@ -12,6 +12,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import data.agence.Agence;
+import data.agence.Notaire;
+import data.immo.BienImmo;
+import data.user.Client;
 
 public class AgenceTest {
 
@@ -98,6 +101,16 @@ public class AgenceTest {
 		assertEquals(0, agence.getListeMandat().size());
 		agence.creerMandat(0.0, new Date(), new Date(), new Date(), null, null);
 		assertEquals(1, agence.getListeMandat().size());
+	}
+
+	/**
+	 * Test method for {@link data.agence.Agence#creerPromesse(java.lang.Double, java.util.Date, java.lang.Double, java.lang.Double, data.immo.BienImmo, data.user.Client, data.agence.Notaire)}.
+	 */
+	@Test
+	public void testCreerPromesse() {
+		assertEquals(0, agence.getListePromesse().size());
+		agence.creerPromesse(0.0, new Date(), 0.0, 0.0, null, null, null);
+		assertEquals(1, agence.getListePromesse().size());
 	}
 
 	/**

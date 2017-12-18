@@ -58,7 +58,7 @@ public class Terrain extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "-" + getSurfaceSol() + "-" + getLongueurFacade());
+		return (super.toString() + "   -" + getSurfaceSol() + "-" + getLongueurFacade() + "\n");
 	}
 
 }

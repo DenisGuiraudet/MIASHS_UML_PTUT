@@ -106,7 +106,7 @@ public class Maison extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "-" + getSurfaceHabitable() + "-" + getNbPieces() + "-" + getNbEtages() + "-" + getChauffage() + "-" + getTerrain());
+		return (super.toString() + "   -" + getSurfaceHabitable() + "-" + getNbPieces() + "-" + getNbEtages() + "-" + getChauffage() + "-" + getTerrain() + "\n");
 	}
 
 }

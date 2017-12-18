@@ -45,7 +45,7 @@ public class Entreprise extends Client {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "-" + getFormeJuridique() + "-" + getNumSiren());
+		return (super.toString() + "   -" + getFormeJuridique() + "-" + getNumSiren() + "\n");
 	}
 
 }

@@ -152,7 +152,7 @@ public class Promesse {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getPrixVerseVendeur() + "-" + getVente() + "-" + getCommissionAgence() + "-" + getFraisVente() + "-" + getBien() + "-" + getAcheteur() + "-" + getNotaire() + "-" + isEtatFinit());
+		return (getPrixVerseVendeur() + "-" + getVente() + "-" + getCommissionAgence() + "-" + getFraisVente() + "-" + getBien() + "-" + getAcheteur() + "-" + getNotaire() + "-" + isEtatFinit() + "\n");
 	}
 
 }

@@ -27,7 +27,7 @@ public class AnnoncePub {
 	
 	@Override
 	public String toString() {
-		return ("\n" + listePub.toString());
+		return (listePub.toString() + "\n");
 	}
 
 }

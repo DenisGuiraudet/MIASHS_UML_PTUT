@@ -50,7 +50,7 @@ public class Notaire {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getNom() + "-" + getAdresse());
+		return (getNom() + "-" + getAdresse() + "\n");
 	}
 
 }

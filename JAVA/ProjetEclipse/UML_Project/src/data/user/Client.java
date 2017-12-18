@@ -91,7 +91,7 @@ public abstract class Client {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getNom() + "-" + getAdresse() + "-" + getTelephone() + "-" + getEmail() + "-" + getListeEnvie().toString());
+		return (getNom() + "-" + getAdresse() + "-" + getTelephone() + "-" + getEmail() + "-" + getListeEnvie().toString() + "\n");
 	}
 	
 }

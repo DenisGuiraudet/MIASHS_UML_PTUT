@@ -90,7 +90,7 @@ public class Envie {
 	
 	@Override
 	public String toString() {
-		return ("\n" + getType() + "-" + getPrix() + "-" + getLocalisation() + "-" + getSurfaceSol() + "-" + getNbPieces());
+		return (getType() + "-" + getPrix() + "-" + getLocalisation() + "-" + getSurfaceSol() + "-" + getNbPieces() + "\n");
 	}
 	
 }
