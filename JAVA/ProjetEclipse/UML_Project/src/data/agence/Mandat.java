@@ -146,5 +146,10 @@ public class Mandat {
 	public HashMap<Date, Client> getListeRdvVendeur() {
 		return listeRdvVendeur;
 	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getPrix() + "-" + getVente() + "-" + getDebut() + "-" + getFin() + "-" + getBien() + "-" + getVendeur() + "-" + getListeRdvVisite() + "-" + getListeRdvVendeur());
+	}
 
 }

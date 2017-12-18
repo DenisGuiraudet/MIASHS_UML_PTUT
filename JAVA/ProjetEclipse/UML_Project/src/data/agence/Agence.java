@@ -3,6 +3,7 @@ package data.agence;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import data.immo.Appartement;
 import data.immo.BienImmo;
@@ -23,6 +24,7 @@ public class Agence {
 	private ArrayList<Promesse> listePromesse;
 	private ArrayList<Notaire> listeNotaire;
 	private ArrayList<AnnoncePub> listeAnnonce;
+	private HashMap<Date, Client> listeRdv;
 	
 	public Agence(String nomV) {
 
@@ -33,6 +35,7 @@ public class Agence {
 		this.listePromesse = new ArrayList<Promesse>();
 		this.listeNotaire = new ArrayList<Notaire>();
 		this.listeAnnonce = new ArrayList<AnnoncePub>();
+		this.listeRdv = new HashMap<Date, Client>();
 		
 	}
 	
@@ -77,25 +80,10 @@ public class Agence {
 		
 	}
 	
-	public void organiserVisite(Client clientV, Mandat mandatV, Date dateV) {
-		
-		mandatV.addRdvVisite(dateV, clientV);
-		
-	}
-	
-	public void organiserVente(Client clientV, Mandat mandatV, Date dateV) {
-		
-		mandatV.addRdvVendeur(dateV, clientV);
-		
-		// TODO : creerPromesse();
-		// Peut changer ? => action a part
-		
-	}
-	
-	private void creerPromesse(Double prixVerseVendeurV, String adresseNotaireV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
+	private void creerPromesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
 			BienImmo bienV, Client acheteurV, Notaire notaireV) {
 		
-		this.listePromesse.add(new Promesse(prixVerseVendeurV, adresseNotaireV, venteV, commissionAgenceV, fraisVenteV, bienV, acheteurV, notaireV));
+		this.listePromesse.add(new Promesse(prixVerseVendeurV, venteV, commissionAgenceV, fraisVenteV, bienV, acheteurV, notaireV));
 		
 	}
 	
@@ -116,10 +104,10 @@ public class Agence {
 		this.listeAnnonce.add(new AnnoncePub());
 		
 	}
-	
-	public void ajouterPub(AnnoncePub annoncePubV, TypePub typePubV) {
+
+	public void addRdv(Date date, Client client) {
 		
-		annoncePubV.ajouterPub(typePubV);
+		this.listeRdv.put(date, client);
 		
 	}
 
@@ -177,6 +165,18 @@ public class Agence {
 	 */
 	public ArrayList<AnnoncePub> getListeAnnonce() {
 		return listeAnnonce;
+	}
+
+	/**
+	 * @return the listeRdv
+	 */
+	public HashMap<Date, Client> getListeRdv() {
+		return listeRdv;
+	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getNom() + "-" + getListeBien() + "-" + getListeClient() + "-" + getListeMandat() + "-" + getListePromesse() + "-" + getListeNotaire() + "-" + getListeAnnonce() + "-" + getListeRdv());
 	}
 	
 }

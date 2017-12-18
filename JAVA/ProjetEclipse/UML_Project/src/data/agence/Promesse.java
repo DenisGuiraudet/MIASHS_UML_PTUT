@@ -16,7 +16,7 @@ public class Promesse {
 	private Notaire notaire;
 	private boolean etatFinit;
 	
-	public Promesse(Double prixVerseVendeurV, String adresseNotaireV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
+	public Promesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV,
 			BienImmo bienV, Client acheteurV, Notaire notaireV) {
 
 		this.setPrixVerseVendeur(prixVerseVendeurV);
@@ -148,6 +148,11 @@ public class Promesse {
 	 */
 	public void setEtatFinit(boolean etatFinit) {
 		this.etatFinit = etatFinit;
+	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getPrixVerseVendeur() + "-" + getVente() + "-" + getCommissionAgence() + "-" + getFraisVente() + "-" + getBien() + "-" + getAcheteur() + "-" + getNotaire() + "-" + isEtatFinit());
 	}
 
 }

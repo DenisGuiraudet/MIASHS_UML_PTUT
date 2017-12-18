@@ -42,5 +42,10 @@ public class Entreprise extends Client {
 	public void setNumSiren(String numSiren) {
 		this.numSiren = numSiren;
 	}
+	
+	@Override
+	public String toString() {
+		return (super.toString() + "-" + getFormeJuridique() + "-" + getNumSiren());
+	}
 
 }

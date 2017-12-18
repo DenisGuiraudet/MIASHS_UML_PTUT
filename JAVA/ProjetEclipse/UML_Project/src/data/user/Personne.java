@@ -8,5 +8,10 @@ public class Personne extends Client {
 		super(nomV, adresseV, telephoneV, emailV);
 		
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }

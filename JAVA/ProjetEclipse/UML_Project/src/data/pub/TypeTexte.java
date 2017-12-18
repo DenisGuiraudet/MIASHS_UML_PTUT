@@ -16,5 +16,10 @@ public class TypeTexte extends TypePub {
 		return this.texte;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }

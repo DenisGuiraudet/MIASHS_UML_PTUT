@@ -103,5 +103,10 @@ public class Maison extends BienImmo {
 	public void setTerrain(Terrain terrain) {
 		this.terrain = terrain;
 	}
+	
+	@Override
+	public String toString() {
+		return (super.toString() + "-" + getSurfaceHabitable() + "-" + getNbPieces() + "-" + getNbEtages() + "-" + getChauffage() + "-" + getTerrain());
+	}
 
 }

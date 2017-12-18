@@ -72,6 +72,9 @@ public class Appartement extends BienImmo {
 		this.chargesMensuelles = chargesMensuelles;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return (super.toString() + "-" + getNbPieces() + "-" + getEtage() + "-" + getChargesMensuelles());
+	}
 
 }

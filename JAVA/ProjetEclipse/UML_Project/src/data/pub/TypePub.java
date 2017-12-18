@@ -7,5 +7,10 @@ public abstract class TypePub {
 		return null;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getElem());
+	}
 
 }

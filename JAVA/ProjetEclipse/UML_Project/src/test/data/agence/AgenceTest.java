@@ -12,10 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import data.agence.Agence;
-import data.pub.TypeHtml;
-import data.pub.TypeImg;
-import data.pub.TypeTexte;
-import data.pub.TypeVid;
 
 public class AgenceTest {
 
@@ -105,28 +101,6 @@ public class AgenceTest {
 	}
 
 	/**
-	 * Test method for {@link data.agence.Agence#organiserVisite(data.user.Client, data.agence.Mandat, java.util.Date)}.
-	 */
-	@Test
-	public void testOrganiserVisite() {
-		agence.creerMandat(0.0, new Date(), new Date(), new Date(), null, null);
-		assertEquals(0, agence.getListeMandat().get(0).getListeRdvVisite().size());
-		agence.organiserVisite(null, agence.getListeMandat().get(0), new Date());
-		assertEquals(1, agence.getListeMandat().get(0).getListeRdvVisite().size());
-	}
-
-	/**
-	 * Test method for {@link data.agence.Agence#organiserVente(data.user.Client, data.agence.Mandat, java.util.Date)}.
-	 */
-	@Test
-	public void testOrganiserVente() {
-		agence.creerMandat(0.0, new Date(), new Date(), new Date(), null, null);
-		assertEquals(0, agence.getListeMandat().get(0).getListeRdvVendeur().size());
-		agence.organiserVente(null, agence.getListeMandat().get(0), new Date());
-		assertEquals(1, agence.getListeMandat().get(0).getListeRdvVendeur().size());
-	}
-
-	/**
 	 * Test method for {@link data.agence.Agence#creerNotaire(java.lang.String, java.lang.String)}.
 	 */
 	@Test
@@ -155,20 +129,13 @@ public class AgenceTest {
 	}
 
 	/**
-	 * Test method for {@link data.agence.Agence#ajouterPub(data.pub.AnnoncePub, data.pub.TypePub)}.
+	 * Test method for {@link data.agence.Agence#addRdv(java.util.Date, data.user.Client)}.
 	 */
 	@Test
-	public void testAjouterPub() {
-		agence.creerDocument();
-		assertEquals(0, agence.getListeAnnonce().get(0).getListePub().size());
-		agence.ajouterPub(agence.getListeAnnonce().get(0), new TypeTexte(""));
-		assertEquals(1, agence.getListeAnnonce().get(0).getListePub().size());
-		agence.ajouterPub(agence.getListeAnnonce().get(0), new TypeHtml(""));
-		assertEquals(2, agence.getListeAnnonce().get(0).getListePub().size());
-		agence.ajouterPub(agence.getListeAnnonce().get(0), new TypeImg(""));
-		assertEquals(3, agence.getListeAnnonce().get(0).getListePub().size());
-		agence.ajouterPub(agence.getListeAnnonce().get(0), new TypeVid(""));
-		assertEquals(4, agence.getListeAnnonce().get(0).getListePub().size());
+	public void testAddRdv() {
+		assertEquals(0, agence.getListeRdv().size());
+		agence.addRdv(new Date(), null);
+		assertEquals(1, agence.getListeRdv().size());
 	}
 	
 }

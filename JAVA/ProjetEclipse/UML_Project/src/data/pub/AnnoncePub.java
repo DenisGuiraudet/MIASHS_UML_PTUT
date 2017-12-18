@@ -24,5 +24,10 @@ public class AnnoncePub {
 	public ArrayList<TypePub> getListePub() {
 		return listePub;
 	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + listePub.toString());
+	}
 
 }

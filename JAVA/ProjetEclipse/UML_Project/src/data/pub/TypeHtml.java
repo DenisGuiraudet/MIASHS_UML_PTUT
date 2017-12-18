@@ -16,5 +16,10 @@ public class TypeHtml extends TypePub {
 		return this.html;
 
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }

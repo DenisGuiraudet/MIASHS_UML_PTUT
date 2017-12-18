@@ -55,5 +55,10 @@ public class Terrain extends BienImmo {
 	public void setLongueurFacade(Double longueurFacade) {
 		this.longueurFacade = longueurFacade;
 	}
+	
+	@Override
+	public String toString() {
+		return (super.toString() + "-" + getSurfaceSol() + "-" + getLongueurFacade());
+	}
 
 }

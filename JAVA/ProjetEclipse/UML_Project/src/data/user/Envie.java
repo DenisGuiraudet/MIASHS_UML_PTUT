@@ -88,4 +88,9 @@ public class Envie {
 		this.nbPieces = nbPieces;
 	}
 	
+	@Override
+	public String toString() {
+		return ("\n" + getType() + "-" + getPrix() + "-" + getLocalisation() + "-" + getSurfaceSol() + "-" + getNbPieces());
+	}
+	
 }

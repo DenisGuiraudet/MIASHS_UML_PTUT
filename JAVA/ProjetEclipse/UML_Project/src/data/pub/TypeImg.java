@@ -16,5 +16,10 @@ public class TypeImg extends TypePub {
 		return this.img;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }

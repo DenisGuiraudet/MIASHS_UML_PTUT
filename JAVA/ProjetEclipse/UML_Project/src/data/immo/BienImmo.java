@@ -111,5 +111,10 @@ public abstract class BienImmo {
 	public ArrayList<Date> getDispo() {
 		return dispo;
 	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getNum() + "-" + getAdresse() + "-" + getOrientation() + "-" + getPrix() + "-" + getVente() + "-" + getDispo());
+	}
 
 }

@@ -20,9 +20,9 @@ public abstract class Client {
 		
 	}
 	
-	public void ajouterEnvie(Envie envie) {
+	public void ajouterEnvie(String typeV, Double prixV, String localisationV, Double surfaceSolV, int nbPiecesV) {
 		
-		this.listeEnvie.add(envie);
+		this.listeEnvie.add(new Envie(typeV, prixV, localisationV, surfaceSolV, nbPiecesV));
 		
 	}
 
@@ -87,6 +87,11 @@ public abstract class Client {
 	 */
 	public ArrayList<Envie> getListeEnvie() {
 		return listeEnvie;
+	}
+	
+	@Override
+	public String toString() {
+		return ("\n" + getNom() + "-" + getAdresse() + "-" + getTelephone() + "-" + getEmail() + "-" + getListeEnvie().toString());
 	}
 	
 }

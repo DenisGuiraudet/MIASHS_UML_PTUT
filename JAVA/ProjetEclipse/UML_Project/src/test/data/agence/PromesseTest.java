@@ -23,7 +23,7 @@ public class PromesseTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		promesse = new Promesse(0.0, "", new Date(), 0.0, 0.0,
+		promesse = new Promesse(0.0, new Date(), 0.0, 0.0,
 				null, null, new Notaire("", ""));
 	}
 

@@ -16,5 +16,10 @@ public class TypeVid extends TypePub {
 		return this.vid;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }
