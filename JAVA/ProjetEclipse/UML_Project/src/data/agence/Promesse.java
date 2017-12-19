@@ -1,12 +1,17 @@
 package data.agence;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import data.immo.BienImmo;
 import data.user.Client;
 
-public class Promesse {
+public class Promesse implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Double prixVerseVendeur;
 	private Date vente;
 	private Double commissionAgence;
@@ -152,7 +157,9 @@ public class Promesse {
 	
 	@Override
 	public String toString() {
-		return (getPrixVerseVendeur() + "-" + getVente() + "-" + getCommissionAgence() + "-" + getFraisVente() + "-" + getBien() + "-" + getAcheteur() + "-" + getNotaire() + "-" + isEtatFinit() + "\n");
+		return ("\n+ Promesse : " + "\n- Prix verse vendeur : " + getPrixVerseVendeur() + "\n- Date vente : " + getVente() + "\n- Commission agence : " + getCommissionAgence() +
+				"\n- Frais vente : " + getFraisVente() + "\n- Bien : " + getBien() + "\n- Acheteur : " + getAcheteur() +
+				"\n- Notaire : " + getNotaire() + "\n- Etat finit : " + isEtatFinit());
 	}
 
 }

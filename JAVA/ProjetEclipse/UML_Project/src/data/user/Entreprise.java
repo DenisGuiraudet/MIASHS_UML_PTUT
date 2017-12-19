@@ -2,6 +2,10 @@ package data.user;
 
 public class Entreprise extends Client {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String formeJuridique;
 	private String numSiren;
 
@@ -45,7 +49,7 @@ public class Entreprise extends Client {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "   -" + getFormeJuridique() + "-" + getNumSiren() + "\n");
+		return ("\n+ Entreprise : " + super.toString() + "\n- Forme juridique : " + getFormeJuridique() + "\n- Numero SIREN : " + getNumSiren());
 	}
 
 }

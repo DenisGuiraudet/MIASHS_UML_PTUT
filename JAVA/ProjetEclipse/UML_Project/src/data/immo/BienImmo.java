@@ -1,12 +1,17 @@
 package data.immo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 import data.user.Envie;
 
-public abstract class BienImmo {
+public abstract class BienImmo implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int num;
 	private String adresse;
 	private String orientation;
@@ -114,7 +119,8 @@ public abstract class BienImmo {
 	
 	@Override
 	public String toString() {
-		return (getNum() + "-" + getAdresse() + "-" + getOrientation() + "-" + getPrix() + "-" + getVente() + "-" + getDispo() + "\n");
+		return ("\n- Numero : " + getNum() + "\n- Adresse : " + getAdresse() + "\n- Orientation : " + getOrientation() +
+				"\n- Prix : " + getPrix() + "\n- Date vente : " + getVente() + "\n- Dates dispo : " + getDispo());
 	}
 
 }

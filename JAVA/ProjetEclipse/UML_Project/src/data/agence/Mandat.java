@@ -1,13 +1,18 @@
 package data.agence;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 
 import data.immo.BienImmo;
 import data.user.Client;
 
-public class Mandat {
+public class Mandat implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Double prix;
 	private Date vente;
 	private Date debut;
@@ -149,7 +154,9 @@ public class Mandat {
 	
 	@Override
 	public String toString() {
-		return (getPrix() + "-" + getVente() + "-" + getDebut() + "-" + getFin() + "-" + getBien() + "-" + getVendeur() + "-" + getListeRdvVisite() + "-" + getListeRdvVendeur() + "\n");
+		return ("\n+ Mandat : " + "\n- Prix : " + getPrix() + "\n- Date vente : " + getVente() + "\n- Date debut : " + getDebut() +
+				"\n- Date fin : " + getFin() + "\n- Bien : " + getBien() + "\n- Vendeur : " + getVendeur() +
+				"\n- RDV visites : " + getListeRdvVisite() + "\n- RDV vendeurs : " + getListeRdvVendeur());
 	}
 
 }

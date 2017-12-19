@@ -1,9 +1,14 @@
 package data.user;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Client {
+public abstract class Client implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nom;
 	private String adresse;
 	private String telephone;
@@ -91,7 +96,8 @@ public abstract class Client {
 	
 	@Override
 	public String toString() {
-		return (getNom() + "-" + getAdresse() + "-" + getTelephone() + "-" + getEmail() + "-" + getListeEnvie().toString() + "\n");
+		return ("\n- Nom : " + getNom() + "\n- Adresse : " + getAdresse() + "\n- Telephone : " + getTelephone() +
+				"\n- Email : " + getEmail() + "\n- Envies : " + getListeEnvie().toString());
 	}
 	
 }

@@ -1,22 +1,24 @@
 package data.agence;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-
 import data.immo.Appartement;
 import data.immo.BienImmo;
 import data.immo.Maison;
 import data.immo.Terrain;
 import data.pub.AnnoncePub;
-import data.pub.TypePub;
 import data.user.Client;
 import data.user.Entreprise;
 import data.user.Personne;
 
-public class Agence {
+public class Agence implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nom;
 	private ArrayList<BienImmo> listeBien;
 	private ArrayList<Client> listeClient;
@@ -93,9 +95,9 @@ public class Agence {
 		
 	}
 	
-	public void voirStats() {
+	public String voirStats() {
 		
-		// TODO
+		return this.toString();
 		
 	}
 	
@@ -176,7 +178,9 @@ public class Agence {
 	
 	@Override
 	public String toString() {
-		return (getNom() + "-" + getListeBien() + "-" + getListeClient() + "-" + getListeMandat() + "-" + getListePromesse() + "-" + getListeNotaire() + "-" + getListeAnnonce() + "-" + getListeRdv() + "\n");
+		return ("\n+ Agence : " + "\n- Nom : " + getNom() + "\n- Biens : " + getListeBien() + "\n- Clients : " + getListeClient() +
+				"\n- Mandats : " + getListeMandat() + "\n- Promesses : " + getListePromesse() + "\n- Notaires : " + getListeNotaire() +
+				"\n- Annonces : " + getListeAnnonce() + "\n- RDV : " + getListeRdv() + "\n");
 	}
 	
 }

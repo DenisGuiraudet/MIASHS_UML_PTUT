@@ -3,6 +3,11 @@ package data.user;
 
 public class Personne extends Client {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Personne(String nomV, String adresseV, String telephoneV, String emailV) {
 		
 		super(nomV, adresseV, telephoneV, emailV);
@@ -11,7 +16,7 @@ public class Personne extends Client {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		return ("\n+ Personne : " + super.toString());
 	}
 
 }

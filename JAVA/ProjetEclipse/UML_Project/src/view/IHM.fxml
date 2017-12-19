@@ -198,17 +198,6 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Voir Stat">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
-                     <children>
-                        <Button layoutX="708.0" layoutY="14.0" mnemonicParsing="false" onAction="#stat_aff" text="Afficher Stat" />
-                        <Separator layoutX="5.0" layoutY="54.0" prefHeight="35.0" prefWidth="813.0" />
-                        <TextArea fx:id="stat_toString" editable="false" layoutX="14.0" layoutY="89.0" prefHeight="424.0" prefWidth="800.0" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
             <Tab text="Créer Notaire">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -224,6 +213,18 @@
                      </children>
                   </AnchorPane>
               </content>
+            </Tab>
+            <Tab text="Voir Stat">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="640.0">
+                     <children>
+                        <Button layoutX="708.0" layoutY="14.0" mnemonicParsing="false" onAction="#stat_aff" text="Afficher Stat" />
+                        <Separator layoutX="5.0" layoutY="54.0" prefHeight="35.0" prefWidth="813.0" />
+                        <TextArea fx:id="stat_toString" editable="false" layoutX="14.0" layoutY="89.0" prefHeight="424.0" prefWidth="800.0" />
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#save_data" text="SAVE DATA" />
+                     </children>
+                  </AnchorPane>
+               </content>
             </Tab>
         </tabs>
       </TabPane>

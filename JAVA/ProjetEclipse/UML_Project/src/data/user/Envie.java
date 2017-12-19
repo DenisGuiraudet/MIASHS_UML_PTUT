@@ -1,7 +1,13 @@
 package data.user;
 
-public class Envie {
+import java.io.Serializable;
 
+public class Envie implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String type;
 	private Double prix;
 	private String localisation;
@@ -90,7 +96,8 @@ public class Envie {
 	
 	@Override
 	public String toString() {
-		return (getType() + "-" + getPrix() + "-" + getLocalisation() + "-" + getSurfaceSol() + "-" + getNbPieces() + "\n");
+		return ("\n+ Envie : " + "\n- Type : " + getType() + "\n- Prix : " + getPrix() + "\n- Localisation : " + getLocalisation() +
+				"\n- Surface sol : " + getSurfaceSol() + "\n- Nb pieces : " + getNbPieces());
 	}
 	
 }

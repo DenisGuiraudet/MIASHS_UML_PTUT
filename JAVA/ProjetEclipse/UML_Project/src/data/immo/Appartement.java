@@ -6,6 +6,10 @@ import data.user.Envie;
 
 public class Appartement extends BienImmo {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int nbPieces;
 	private int etage;
 	private Double chargesMensuelles;
@@ -74,7 +78,8 @@ public class Appartement extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "   -" + getNbPieces() + "-" + getEtage() + "-" + getChargesMensuelles() + "\n");
+		return ("\n+ Appartement : " + super.toString() + "\n- Nb pieces : " + getNbPieces() + "\n- Etage : " + getEtage() +
+				"\n- Charges mensuelles : " + getChargesMensuelles());
 	}
 
 }

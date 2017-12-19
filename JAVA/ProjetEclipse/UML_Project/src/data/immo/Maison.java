@@ -6,6 +6,10 @@ import data.user.Envie;
 
 public class Maison extends BienImmo {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Double surfaceHabitable;
 	private int nbPieces;
 	private int nbEtages;
@@ -106,7 +110,8 @@ public class Maison extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "   -" + getSurfaceHabitable() + "-" + getNbPieces() + "-" + getNbEtages() + "-" + getChauffage() + "-" + getTerrain() + "\n");
+		return ("\n+ Maison : " + super.toString() + "\n- Surface habitable : " + getSurfaceHabitable() + "\n- Nb pieces : " + getNbPieces() +
+				"\n- Nb etages : " + getNbEtages() + "\n- Chauffage : " + getChauffage() + "\n- Terrain : " + getTerrain());
 	}
 
 }

@@ -1,6 +1,11 @@
 
 package controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -26,7 +31,7 @@ import javafx.scene.control.ToggleButton;
 
 public class MyController {
 	
-	private Agence agence = new Agence("Timmo");
+	private Agence agence;
 
 	@FXML
     private TextField client_nom;
@@ -208,6 +213,17 @@ public class MyController {
     @FXML
     public void initialize() {
     	
+    	try {
+    		File myFile = new File("src\\data\\agence.dat");
+	    	FileInputStream fin = new FileInputStream(myFile);
+	    	ObjectInputStream ois = new ObjectInputStream(fin);
+	    	agence = (Agence) ois.readObject();
+	    	ois.close();
+    	} catch (Exception e) {
+        	agence = new Agence("Timmo");
+    		e.printStackTrace();
+    	}
+    	
         ((ChoiceBox<String>)bien_type).getItems().add("Terrain");
         ((ChoiceBox<String>)bien_type).getItems().add("Maison");
         ((ChoiceBox<String>)bien_type).getItems().add("Appartement");
@@ -229,6 +245,11 @@ public class MyController {
         ((ChoiceBox<String>)rdv_type).getItems().add("RDV Vendeur");
         ((ChoiceBox<String>)rdv_type).getSelectionModel().select(0);
         
+    }
+    
+    @FXML
+    public void exitApplication(ActionEvent event) {
+       System.out.println("lol");
     }
 
     @FXML
@@ -264,24 +285,24 @@ public class MyController {
         	}
     		
     		ihm_add_last_bien();
+        	
+        	bien_num.setText("");
+        	bien_adresse.setText("");
+        	bien_orientation.setText("");
+        	bien_prix.setText("");
+        	bien_ter_surSol.setText("");
+        	bien_ter_longFac.setText("");
+        	bien_mai_surHab.setText("");
+        	bien_mai_nbPi.setText("");
+        	bien_mai_nbEt.setText("");
+        	bien_mai_chauf.setText("");
+        	bien_app_nbPi.setText("");
+        	bien_app_nbEt.setText("");
+        	bien_app_chargeMensu.setText("");
     		
 		} catch (Exception e) {
 			bien_toString.setText(e.toString());
 		}
-    	
-    	bien_num.setText("");
-    	bien_adresse.setText("");
-    	bien_orientation.setText("");
-    	bien_prix.setText("");
-    	bien_ter_surSol.setText("");
-    	bien_ter_longFac.setText("");
-    	bien_mai_surHab.setText("");
-    	bien_mai_nbPi.setText("");
-    	bien_mai_nbEt.setText("");
-    	bien_mai_chauf.setText("");
-    	bien_app_nbPi.setText("");
-    	bien_app_nbEt.setText("");
-    	bien_app_chargeMensu.setText("");
 
     }
 
@@ -513,7 +534,24 @@ public class MyController {
     @FXML
     void stat_aff(ActionEvent event) {
     	
-    	stat_toString.setText(agence.toString());
+    	stat_toString.setText(agence.voirStats());
+
+    }
+
+    @FXML
+    void save_data(ActionEvent event) {
+    	
+    	System.out.println("save data");
+    	
+    	try {
+    		File myFile = new File("src\\data\\agence.dat");
+    		FileOutputStream fout = new FileOutputStream(myFile);
+	    	ObjectOutputStream oos = new ObjectOutputStream(fout);
+	    	oos.writeObject(agence);
+	    	oos.close();
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
 
     }
     

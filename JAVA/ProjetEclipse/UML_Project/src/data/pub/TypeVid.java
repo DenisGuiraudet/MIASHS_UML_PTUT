@@ -2,6 +2,10 @@ package data.pub;
 
 public class TypeVid extends TypePub {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String vid;
 
 	public TypeVid(String vidV) {
@@ -19,7 +23,7 @@ public class TypeVid extends TypePub {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		return ("\n- Vid : " + super.toString());
 	}
 
 }

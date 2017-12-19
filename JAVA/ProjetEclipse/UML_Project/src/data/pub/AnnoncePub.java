@@ -1,9 +1,14 @@
 package data.pub;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AnnoncePub {
+public class AnnoncePub implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ArrayList<TypePub> listePub;
 
 	public AnnoncePub() {
@@ -27,7 +32,7 @@ public class AnnoncePub {
 	
 	@Override
 	public String toString() {
-		return (listePub.toString() + "\n");
+		return ("\n+ Document : " + listePub.toString());
 	}
 
 }

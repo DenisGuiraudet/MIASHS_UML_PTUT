@@ -2,6 +2,10 @@ package data.pub;
 
 public class TypeImg extends TypePub {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String img;
 
 	public TypeImg(String imgV) {
@@ -19,7 +23,7 @@ public class TypeImg extends TypePub {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		return ("\n- Img : " + super.toString());
 	}
 
 }

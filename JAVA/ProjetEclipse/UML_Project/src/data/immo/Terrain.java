@@ -6,6 +6,10 @@ import data.user.Envie;
 
 public class Terrain extends BienImmo {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Double surfaceSol;
 	private Double longueurFacade;
 
@@ -58,7 +62,7 @@ public class Terrain extends BienImmo {
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "   -" + getSurfaceSol() + "-" + getLongueurFacade() + "\n");
+		return ("\n+ Terrain : " + super.toString() + "\n- Surface sol : " + getSurfaceSol() + "\n- Longueur facade : " + getLongueurFacade());
 	}
 
 }

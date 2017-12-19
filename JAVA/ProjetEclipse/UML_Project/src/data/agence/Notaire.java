@@ -1,7 +1,13 @@
 package data.agence;
 
-public class Notaire {
+import java.io.Serializable;
+
+public class Notaire implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nom;
 	private String adresse;
 	
@@ -50,7 +56,7 @@ public class Notaire {
 	
 	@Override
 	public String toString() {
-		return (getNom() + "-" + getAdresse() + "\n");
+		return ("\n+ Notaire : " + "\n- Nom : " + getNom() + "\n- Adresse : " + getAdresse());
 	}
 
 }
