@@ -8,6 +8,11 @@ import data.agence.Agence;
 import data.agence.Mandat;
 import data.agence.Notaire;
 import data.immo.BienImmo;
+import data.pub.AnnoncePub;
+import data.pub.TypeHtml;
+import data.pub.TypeImg;
+import data.pub.TypeTexte;
+import data.pub.TypeVid;
 import data.user.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -180,7 +185,7 @@ public class MyController {
     private TextArea pub_desc;
 
     @FXML
-    private ComboBox<?> pub_type;
+    private ChoiceBox<?> pub_type;
 
     @FXML
     private TextArea pub_toString;
@@ -213,6 +218,17 @@ public class MyController {
         ((ChoiceBox<String>)envie_type).getItems().add("Appartement");
         ((ChoiceBox<String>)envie_type).getSelectionModel().select(0);
         
+        ((ChoiceBox<String>)pub_type).getItems().add("Texte");
+        ((ChoiceBox<String>)pub_type).getItems().add("HTML");
+        ((ChoiceBox<String>)pub_type).getItems().add("Img");
+        ((ChoiceBox<String>)pub_type).getItems().add("Vid");
+        ((ChoiceBox<String>)pub_type).getSelectionModel().select(0);
+        
+        ((ChoiceBox<String>)rdv_type).getItems().add("RDV");
+        ((ChoiceBox<String>)rdv_type).getItems().add("RDV Visite");
+        ((ChoiceBox<String>)rdv_type).getItems().add("RDV Vendeur");
+        ((ChoiceBox<String>)rdv_type).getSelectionModel().select(0);
+        
     }
 
     @FXML
@@ -226,6 +242,7 @@ public class MyController {
     void bien_creer(ActionEvent event) {
     	
     	try {
+    		
     		if (((String)bien_type.getSelectionModel().getSelectedItem()) == "Terrain") {
     			
         		agence.creerTerrain(Integer.parseInt(bien_num.getText()), bien_adresse.getText(), bien_orientation.getText(), Double.parseDouble(bien_prix.getText()),
@@ -385,12 +402,14 @@ public class MyController {
     @FXML
     void prom_creer(ActionEvent event) {
     	
-    	// TODO
     	try {
     		
-    		/*agence.creerPromesse(Double.parseDouble(prom_prixVerse.getText()),
-    				prom_dateVente,
-    				prom_commiAgen, prom_fraisVente, prom_listBien, prom_listClient, prom_listNotaire);*/
+    		agence.creerPromesse(Double.parseDouble(prom_prixVerse.getText()),
+    				Date.from(prom_dateVente.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+    				Double.parseDouble(prom_commiAgen.getText()), Double.parseDouble(prom_fraisVente.getText()),
+    				((BienImmo)prom_listBien.getSelectionModel().getSelectedItem()),
+    				((Client)prom_listClient.getSelectionModel().getSelectedItem()),
+    				((Notaire)prom_listNotaire.getSelectionModel().getSelectedItem()));
 			
 		} catch (Exception e) {
 			promesse_toString.setText(e.toString());
@@ -408,14 +427,44 @@ public class MyController {
     @FXML
     void pub_creer(ActionEvent event) {
     	
-    	// TODO
+    	try {
+    		
+    		if (((String)pub_type.getSelectionModel().getSelectedItem()) == "Texte") {
+    			
+    			((AnnoncePub)pub_listDoc.getSelectionModel().getSelectedItem()).ajouterPub(new TypeTexte(pub_desc.getText()));
+        		
+        	} else if (((String)bien_type.getSelectionModel().getSelectedItem()) == "HTML") {
+        		
+        		((AnnoncePub)pub_listDoc.getSelectionModel().getSelectedItem()).ajouterPub(new TypeHtml(pub_desc.getText()));
+        		
+        	} else if (((String)bien_type.getSelectionModel().getSelectedItem()) == "Img") {
+        		
+        		((AnnoncePub)pub_listDoc.getSelectionModel().getSelectedItem()).ajouterPub(new TypeImg(pub_desc.getText()));
+        		
+        	} else if (((String)bien_type.getSelectionModel().getSelectedItem()) == "Vid") {
+        		
+        		((AnnoncePub)pub_listDoc.getSelectionModel().getSelectedItem()).ajouterPub(new TypeVid(pub_desc.getText()));
+        		
+        	}
+    		
+		} catch (Exception e) {
+			pub_toString.setText(e.toString());
+		}
 
     }
 
     @FXML
     void pub_doc_creer(ActionEvent event) {
     	
-    	// TODO
+    	try {
+			
+    		agence.creerDocument();
+    		
+    		ihm_add_last_doc();
+    		
+		} catch (Exception e) {
+			pub_toString.setText(e.toString());
+		}
 
     }
 
@@ -434,7 +483,30 @@ public class MyController {
     @FXML
     void rdv_creer(ActionEvent event) {
     	
-    	// TODO
+    	try {
+    		
+    		if (((String)pub_type.getSelectionModel().getSelectedItem()) == "RDV") {
+
+    			agence.addRdv(Date.from(rdv_date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+    					((Client)rdv_listClient.getSelectionModel().getSelectedItem()));
+        		
+        	} else if (((String)pub_type.getSelectionModel().getSelectedItem()) == "RDV Visite") {
+        		
+        		((Mandat)rdv_listMandat.getSelectionModel().getSelectedItem()).addRdvVisite(
+        				Date.from(rdv_date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+    					((Client)rdv_listClient.getSelectionModel().getSelectedItem()));
+        		
+        	} else if (((String)pub_type.getSelectionModel().getSelectedItem()) == "RDV Vente") {
+        		
+        		((Mandat)rdv_listMandat.getSelectionModel().getSelectedItem()).addRdvVendeur(
+        				Date.from(rdv_date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+    					((Client)rdv_listClient.getSelectionModel().getSelectedItem()));
+        		
+        	}
+			
+		} catch (Exception e) {
+			rdv_toString.setText(e.toString());
+		}
 
     }
 
@@ -470,6 +542,12 @@ public class MyController {
     private void ihm_add_last_mandat() {
     	
         ((ChoiceBox<Mandat>)rdv_listMandat).getItems().add(agence.getListeMandat().get(agence.getListeMandat().size() - 1));
+        
+    }
+    
+    private void ihm_add_last_doc() {
+    	
+        ((ChoiceBox<AnnoncePub>)pub_listDoc).getItems().add(agence.getListeAnnonce().get(agence.getListeAnnonce().size() - 1));
         
     }
 
