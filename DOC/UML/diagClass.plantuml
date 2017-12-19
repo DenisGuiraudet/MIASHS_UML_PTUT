@@ -5,18 +5,38 @@ package user {
 
   abstract class Client {
     -String nom
-    -String adresse
-    -Int telephone
-    -String email
-    +creerEnvie(Envie) : void
+  	-String adresse
+  	-String telephone
+  	-String email
+  	-ArrayList<Envie> listeEnvie
+  	+Client(String nomV, String adresseV, String telephoneV, String emailV)
+  	+void ajouterEnvie(String typeV, Double prixV, String localisationV, Double surfaceSolV, int nbPiecesV)
+  	+String getNom()
+  	+void setNom(String nom)
+  	+String getAdresse()
+  	+void setAdresse(String adresse)
+  	+String getTelephone()
+  	+void setTelephone(String telephone)
+  	+String getEmail()
+  	+void setEmail(String email)
+  	+ArrayList<Envie> getListeEnvie()
+  	+String toString()
   }
 
   class Personne {
+    +Personne(String nomV, String adresseV, String telephoneV, String emailV)
+  	+String toString()
   }
 
   class Entreprise {
     -String formeJuridique
-    -Int numSiren
+  	-String numSiren
+  	+Entreprise(String nomV, String adresseV, String telephoneV, String emailV, String formeJurisiqueV, String numSirenV)
+  	+String getFormeJuridique()
+  	+void setFormeJuridique(String formeJuridique)
+  	+String getNumSiren()
+  	+void setNumSiren(String numSiren)
+  	+String toString()
   }
 
   Personne -up-|> Client
@@ -24,10 +44,22 @@ package user {
 
   class Envie {
     -String type
-    -Double prix
-    -String localisation
-    -Double surfaceSol
-    -Int nbPieces
+  	-Double prix
+  	-String localisation
+  	-Double surfaceSol
+  	-int nbPieces
+  	+Envie(String typeV, Double prixV, String localisationV, Double surfaceSolV, int nbPiecesV)
+  	+String getType()
+  	+void setType(String type)
+  	+Double getPrix()
+  	+void setPrix(Double prix)
+  	+String getLocalisation()
+  	+void setLocalisation(String localisation)
+  	+Double getSurfaceSol()
+  	+void setSurfaceSol(Double surfaceSol)
+  	+int getNbPieces()
+  	+void setNbPieces(int nbPieces)
+  	+String toString()
   }
 
   Client *--"*" Envie : "listeEnvie"
@@ -38,35 +70,96 @@ package agence {
 
   class Agence {
     -String nom
-    -HashSet<Date, Client> listeRdvVendeur
-    +creerClient(String, String, Int, String) : void
-    +priseRdvVendeur(Client, Date) : void
-    +creerBien() : void
-    +creerMandat(Client, Mandat) : void
-    +organiserVisite(Client, Mandat, Date) : void
-    +organiserVente(Client, Mandat, Date) : void
-    -creerPromesse(Promesse) : void
-    +voirStats() : void
-    +creerDocument() : void
+  	-ArrayList<BienImmo> listeBien
+  	-ArrayList<Client> listeClient
+  	-ArrayList<Mandat> listeMandat
+  	-ArrayList<Promesse> listePromesse
+  	-ArrayList<Notaire> listeNotaire
+  	-ArrayList<AnnoncePub> listeAnnonce
+  	-HashMap<Date,Client> listeRdv
+  	+Agence(String nomV)
+  	+void creerPersonne(String nomV, String adresseV, String telephoneV, String emailV)
+  	+void creerEntreprise(String nomV, String adresseV, String telephoneV, String emailV, String formeJuridiqueV, String numSirenV)
+  	+void creerTerrain(int numV, String adresseV, String orientationV, Double prixV, Date venteV, Double surfaceSolV, Double longueurFacadeV)
+  	+void creerMaison(int numV, String adresseV, String orientationV, Double prixV, Date venteV, Double surfaceHabitableV, int nbPiecesV, int nbEtagesV, String chauffageV)
+  	+void creerAppartement(int numV, String adresseV, String orientationV, Double prixV, Date venteV, int nbPiecesV, int etageV, Double chargesMensuellesV)
+  	+void creerMandat(Double prixV, Date venteV, Date debutV, Date finV, BienImmo bienV, Client vendeurV)
+  	+void creerPromesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV, BienImmo bienV, Client acheteurV, Notaire notaireV)
+  	+void creerNotaire(String nomV, String adresseV)
+  	+String voirStats()
+  	+void creerDocument()
+  	+void addRdv(Date date, Client client)
+  	+String getNom()
+  	+void setNom(String nom)
+  	+ArrayList<BienImmo> getListeBien()
+  	+ArrayList<Client> getListeClient()
+  	+ArrayList<Mandat> getListeMandat()
+  	+ArrayList<Promesse> getListePromesse()
+  	+ArrayList<Notaire> getListeNotaire()
+  	+ArrayList<AnnoncePub> getListeAnnonce()
+  	+HashMap<Date,Client> getListeRdv()
+  	+String toString()
   }
 
   Client "*"-left-* Agence : "listeClient"
 
   class Mandat {
-    -HashSet<Date, Client> listeRdvVisite
-    -Int prix
-    -Date vente
-    -Date debut
-    -Date fin
+    -Double prix
+  	-Date vente
+  	-Date debut
+  	-Date fin
+  	-BienImmo bien
+  	-Client vendeur
+  	-HashMap<Date,Client> listeRdvVisite
+  	-HashMap<Date,Client> listeRdvVendeur
+  	+Mandat(Double prixV, Date venteV, Date debutV, Date finV, BienImmo bienV, Client vendeurV)
+  	+Double getPrix()
+  	+void setPrix(Double prix)
+  	+Date getVente()
+  	+void setVente(Date vente)
+  	+Date getDebut()
+  	+void setDebut(Date debut)
+  	+Date getFin()
+  	+void setFin(Date fin)
+  	+BienImmo getBien()
+  	+void setBien(BienImmo bien)
+  	+Client getVendeur()
+  	+void setVendeur(Client vendeur)
+  	+void addRdvVisite(Date date, Client client)
+  	+void addRdvVendeur(Date date, Client client)
+  	+HashMap<Date,Client> getListeRdvVisite()
+  	+HashMap<Date,Client> getListeRdvVendeur()
+  	+String toString()
   }
 
   class Promesse {
     -Double prixVerseVendeur
-    -String adresseNotaire
-    -Date vente
-    -Double commissionAgence
-    -Double fraisVente
-    +signerPromesse() : void
+  	-Date vente
+  	-Double commissionAgence
+  	-Double fraisVente
+  	-BienImmo bien
+  	-Client acheteur
+  	-Notaire notaire
+  	-boolean etatFinit
+  	+Promesse(Double prixVerseVendeurV, Date venteV, Double commissionAgenceV, Double fraisVenteV, BienImmo bienV, Client acheteurV, Notaire notaireV)
+  	+void signerPromesse()
+  	+Double getPrixVerseVendeur()
+  	+void setPrixVerseVendeur(Double prixVerseVendeur)
+  	+Date getVente()
+  	+void setVente(Date vente)
+  	+Double getCommissionAgence()
+  	+void setCommissionAgence(Double commissionAgence)
+  	+Double getFraisVente()
+  	+void setFraisVente(Double fraisVente)
+  	+BienImmo getBien()
+  	+void setBien(BienImmo bien)
+  	+Client getAcheteur()
+  	+void setAcheteur(Client acheteur)
+  	+Notaire getNotaire()
+  	+void setNotaire(Notaire notaire)
+  	+boolean isEtatFinit()
+  	+void setEtatFinit(boolean etatFinit)
+  	+String toString()
   }
 
   Agence *--"*" Mandat : "listeMandat"
@@ -76,7 +169,15 @@ package agence {
   Promesse -->"1" Client : "acheteur"
 
   class Notaire {
-    +verserArgent()
+    -String nom
+  	-String adresse
+  	+Notaire(String nomV, String adresseV)
+  	+void verserArgent()
+  	+String getNom()
+  	+void setNom(String nom)
+  	+String getAdresse()
+  	+void setAdresse(String adresse)
+  	+String toString()
   }
 
   Agence *--"*" Notaire : "listeNotaire"
@@ -88,34 +189,47 @@ package agence {
 package pub {
 
   class AnnoncePub {
-    +addElem(TypePub) : void
+    -ArrayList<TypePub> listePub
+    +AnnoncePub()
+    +void ajouterPub(TypePub typePub)
+    +ArrayList<TypePub> getListePub()
+    +String toString()
   }
 
   AnnoncePub "*"--* Agence : "listeAnnonce"
   TypePub "*"--* AnnoncePub : "listePub"
 
   abstract class TypePub {
-    +getElem()
+    +String getElem()
+  	+String toString()
   }
 
   class TypeTexte {
     -String texte
-    +getElem()
+  	+TypeTexte(String texteV)
+  	+String getElem()
+  	+String toString()
   }
 
   class TypeHtml {
     -String html
-    +getElem()
+  	+TypeHtml(String htmlV)
+  	+String getElem()
+  	+String toString()
   }
 
   class TypeImg {
     -String img
-    +getElem()
+  	+TypeImg(String imgV)
+  	+String getElem()
+  	+String toString()
   }
 
   class TypeVid {
-    -String vid
-    +getElem()
+  	-String vid
+  	+TypeVid(String vidV)
+  	+String getElem()
+  	+String toString()
   }
 
   TypeTexte -up-|> TypePub
@@ -128,13 +242,27 @@ package pub {
 package immo {
 
   abstract class BienImmo {
-    -Int num
-    -String adresse
-    -String orientation
-    -Double prix
-    -Date vente
-    -Date[] dispo
-    +correspondance(Envie) : Double
+  	-int num
+  	-String adresse
+  	-String orientation
+  	-Double prix
+  	-Date vente
+  	-ArrayList<Date> dispo
+  	+BienImmo(int numV, String adresseV, String orientationV, Double prixV, Date venteV)
+  	+Double correspondance(Envie envie)
+  	+int getNum()
+  	+void setNum(int num)
+  	+String getAdresse()
+  	+void setAdresse(String adresse)
+  	+String getOrientation()
+  	+void setOrientation(String orientation)
+  	+Double getPrix()
+  	+void setPrix(Double prix)
+  	+Date getVente()
+  	+void setVente(Date vente)
+  	+void addDispo(Date dispoV)
+  	+ArrayList<Date> getDispo()
+  	+String toString()
   }
 
   BienImmo "*"-left-* Agence : "listeBien"
@@ -142,24 +270,51 @@ package immo {
   Promesse -up->"1" BienImmo : "bien"
 
   class Terrain {
-    -Double surfaceSol
-    -Double longueurFacade
-    +correspondance(Envie) : Double
+  	-Double surfaceSol
+  	-Double longueurFacade
+  	+Terrain(int numV, String adresseV, String orientationV, Double prixV, Date venteV, Double surfaceSolV, Double longueurFacadeV)
+  	+Double correspondance(Envie envie)
+  	+Double getSurfaceSol()
+  	+void setSurfaceSol(Double surfaceSol)
+  	+Double getLongueurFacade()
+  	+void setLongueurFacade(Double longueurFacade)
+  	+String toString()
   }
 
   class Maison {
-    -Double surfaceHabitable
-    -Int nbPieces
-    -Int nbEtages
-    -String chauffage
-    +correspondance(Envie) : Double
+  	-Double surfaceHabitable
+  	-int nbPieces
+  	-int nbEtages
+  	-String chauffage
+  	-Terrain terrain
+  	+Maison(int numV, String adresseV, String orientationV, Double prixV, Date venteV, Double surfaceHabitableV, int nbPiecesV, int nbEtagesV, String chauffageV)
+  	+Double correspondance(Envie envie)
+  	+Double getSurfaceHabitable()
+  	+void setSurfaceHabitable(Double surfaceHabitable)
+  	+int getNbPieces()
+  	+void setNbPieces(int nbPieces)
+  	+int getNbEtages()
+  	+void setNbEtages(int nbEtages)
+  	+String getChauffage()
+  	+void setChauffage(String chauffage)
+  	+Terrain getTerrain()
+  	+void setTerrain(Terrain terrain)
+  	+String toString()
   }
 
   class Appartement {
-    -Int nbPieces
-    -Int etage
-    -Double chargesMensuelles
-    +correspondance(Envie) : Double
+  	-int nbPieces
+  	-int etage
+  	-Double chargesMensuelles
+  	+Appartement(int numV, String adresseV, String orientationV, Double prixV, Date venteV, int nbPiecesV, int etageV, Double chargesMensuellesV)
+  	+Double correspondance(Envie envie)
+  	+int getNbPieces()
+  	+void setNbPieces(int nbPieces)
+  	+int getEtage()
+  	+void setEtage(int etage)
+  	+Double getChargesMensuelles()
+  	+void setChargesMensuelles(Double chargesMensuelles)
+  	+String toString()
   }
 
   Appartement -up-|> BienImmo
