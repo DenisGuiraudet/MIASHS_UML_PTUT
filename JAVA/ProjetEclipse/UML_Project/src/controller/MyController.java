@@ -19,6 +19,8 @@ import data.pub.TypeImg;
 import data.pub.TypeTexte;
 import data.pub.TypeVid;
 import data.user.Client;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +30,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 
 public class MyController {
 	
@@ -214,7 +219,7 @@ public class MyController {
     public void initialize() {
     	
     	try {
-    		File myFile = new File("src\\data\\agence.dat");
+    		File myFile = new File("agence.dat");
 	    	FileInputStream fin = new FileInputStream(myFile);
 	    	ObjectInputStream ois = new ObjectInputStream(fin);
 	    	agence = (Agence) ois.readObject();
@@ -245,11 +250,6 @@ public class MyController {
         ((ChoiceBox<String>)rdv_type).getItems().add("RDV Vendeur");
         ((ChoiceBox<String>)rdv_type).getSelectionModel().select(0);
         
-    }
-    
-    @FXML
-    public void exitApplication(ActionEvent event) {
-       System.out.println("lol");
     }
 
     @FXML
@@ -541,10 +541,8 @@ public class MyController {
     @FXML
     void save_data(ActionEvent event) {
     	
-    	System.out.println("save data");
-    	
     	try {
-    		File myFile = new File("src\\data\\agence.dat");
+    		File myFile = new File("agence.dat");
     		FileOutputStream fout = new FileOutputStream(myFile);
 	    	ObjectOutputStream oos = new ObjectOutputStream(fout);
 	    	oos.writeObject(agence);

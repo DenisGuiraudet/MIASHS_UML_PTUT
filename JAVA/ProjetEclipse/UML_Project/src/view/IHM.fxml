@@ -64,19 +64,19 @@
                         <Label layoutX="206.0" layoutY="149.0" prefHeight="20.0" prefWidth="156.0" text="Longueur Facade" />
                         <TextField fx:id="bien_ter_longFac" layoutX="206.0" layoutY="166.0" />
                         <Label layoutX="15.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Surface Habitable" />
-                        <TextField fx:id="bien_mai_surHab" layoutX="15.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_surHab" disable="true" layoutX="15.0" layoutY="231.0" />
                         <Label layoutX="206.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Nb Pieces" />
-                        <TextField fx:id="bien_mai_nbPi" layoutX="206.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_nbPi" disable="true" layoutX="206.0" layoutY="231.0" />
                         <Label layoutX="388.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Nb Etages" />
-                        <TextField fx:id="bien_mai_nbEt" layoutX="388.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_nbEt" disable="true" layoutX="388.0" layoutY="231.0" />
                         <Label layoutX="567.0" layoutY="216.0" prefHeight="20.0" prefWidth="156.0" text="Chauffage" />
-                        <TextField fx:id="bien_mai_chauf" layoutX="567.0" layoutY="233.0" />
+                        <TextField fx:id="bien_mai_chauf" disable="true" layoutX="567.0" layoutY="233.0" />
                         <Label layoutX="14.0" layoutY="287.0" prefHeight="20.0" prefWidth="156.0" text="Nb Pieces" />
-                        <TextField fx:id="bien_app_nbPi" layoutX="14.0" layoutY="304.0" />
+                        <TextField fx:id="bien_app_nbPi" disable="true" layoutX="14.0" layoutY="304.0" />
                         <Label layoutX="201.0" layoutY="288.0" prefHeight="20.0" prefWidth="156.0" text="Nb Etages" />
-                        <TextField fx:id="bien_app_nbEt" layoutX="201.0" layoutY="305.0" />
+                        <TextField fx:id="bien_app_nbEt" disable="true" layoutX="201.0" layoutY="305.0" />
                         <Label layoutX="383.0" layoutY="288.0" prefHeight="20.0" prefWidth="156.0" text="Charges Mensuelles" />
-                        <TextField fx:id="bien_app_chargeMensu" layoutX="383.0" layoutY="305.0" />
+                        <TextField fx:id="bien_app_chargeMensu" disable="true" layoutX="383.0" layoutY="305.0" />
                         <Separator layoutX="6.0" layoutY="336.0" prefHeight="35.0" prefWidth="814.0" />
                         <Label layoutX="14.0" layoutY="74.0" prefHeight="20.0" prefWidth="68.0" text="Vente" />
                         <TextArea fx:id="bien_toString" editable="false" layoutX="17.0" layoutY="360.0" prefHeight="148.0" prefWidth="796.0" />

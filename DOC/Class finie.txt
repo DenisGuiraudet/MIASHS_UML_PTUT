@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/33881046/how-to-connect-fx-controller-with-m
 === PROG ===
 
 agence
-	Agence		- en cours : voirStats()
+	Agence		- finit
 	Notaire		- en cours : verserArgent()
 	Mandat		- finit
 	Promesse	- finit
@@ -32,7 +32,7 @@ pub
 === TEST ===
 
 agence
-	Agence		- en cours : voirStats()
+	Agence		- finit
 	Notaire		- en cours : verserArgent()
 	Mandat		- finit
 	Promesse	- finit
