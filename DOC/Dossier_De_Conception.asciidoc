@@ -1,7 +1,7 @@
 Dossier de conception
 =====================
 Matthieu Orriere, Denis Guiraudet
-13/12/2017
+22/12/2017
 
 :source-highlighter: rouge
 
@@ -121,42 +121,47 @@ Interface
 
 :numbered!:
 
-Création de Personne
-~~~~~~~~~~~~~~~~~~~~
+Création de Client
+~~~~~~~~~~~~~~~~~~
 
-image::IHM/Personne.PNG[Interface, align="center"]
+image::IHM/Client.png[Interface, align="center"]
 
 Création de Bien
 ~~~~~~~~~~~~~~~~
 
-image::IHM/Bien.PNG[Interface, align="center"]
+image::IHM/Bien.png[Interface, align="center"]
 
 Création de Mandat
 ~~~~~~~~~~~~~~~~~~
 
-image::IHM/Mandat.PNG[Interface, align="center"]
+image::IHM/Mandat.png[Interface, align="center"]
 
 Création de Promesse
 ~~~~~~~~~~~~~~~~~~~~
 
-image::IHM/Promesse.PNG[Interface, align="center"]
+image::IHM/Promesse.png[Interface, align="center"]
 
 Création d'Envie
 ~~~~~~~~~~~~~~~~
 
-image::IHM/Envie.PNG[Interface, align="center"]
+image::IHM/Envie.png[Interface, align="center"]
 
 Organisation de RDV
 ~~~~~~~~~~~~~~~~~~~
 
-image::IHM/RDV.PNG[Interface, align="center"]
+image::IHM/RDV.png[Interface, align="center"]
 
 Création de Pub
 ~~~~~~~~~~~~~~~
 
-image::IHM/Pub.PNG[Interface, align="center"]
+image::IHM/PUB.png[Interface, align="center"]
+
+Création de Notaire
+~~~~~~~~~~~~~~~~~~~
+
+image::IHM/Notaire.png[Interface, align="center"]
 
 Affichage de Statistique
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-image::IHM/Stat.PNG[Interface, align="center"]
+image::IHM/Stat.png[Interface, align="center"]

@@ -462,13 +462,14 @@ compréhension de notre environnement de travail.</p>
 <li><a href="#_choix_techniques">2. Choix techniques</a></li>
 <li><a href="#_interface">3. Interface</a>
 <ul class="sectlevel2">
-<li><a href="#_cr_ation_de_personne">Création de Personne</a></li>
+<li><a href="#_cr_ation_de_client">Création de Client</a></li>
 <li><a href="#_cr_ation_de_bien_2">Création de Bien</a></li>
 <li><a href="#_cr_ation_de_mandat">Création de Mandat</a></li>
 <li><a href="#_cr_ation_de_promesse">Création de Promesse</a></li>
 <li><a href="#_cr_ation_d_envie">Création d&#8217;Envie</a></li>
 <li><a href="#_organisation_de_rdv">Organisation de RDV</a></li>
 <li><a href="#_cr_ation_de_pub">Création de Pub</a></li>
+<li><a href="#_cr_ation_de_notaire">Création de Notaire</a></li>
 <li><a href="#_affichage_de_statistique">Affichage de Statistique</a></li>
 </ul>
 </li>
@@ -481,7 +482,8 @@ compréhension de notre environnement de travail.</p>
 <div class="sect2">
 <h3 id="_cas_d_utilisation">1.1. Cas d&#8217;utilisation</h3>
 <div id="__asciidoctor-preview-520__" class="paragraph">
-<p>Le diagramme suivant développe les différentes possibilités d&#8217;utilisation d&#8217;un membre de l&#8217;agence.</p>
+<p>Le diagramme suivant développe les différentes possibilités d&#8217;utilisation d&#8217;un membre de l&#8217;agence.
+Tous les cas représentés dans le diagramme ont été implémentés dans l&#8217;application.</p>
 </div>
 <div id="__asciidoctor-preview-526__" class="imageblock" style="text-align: center">
 <div class="content">
@@ -632,7 +634,7 @@ fonctions définies dans le diagramme de classe par rapport aux différents cas 
 <p>Utilisation de la librairie graphique JavaFX (utilisation du logiciel SceneBuilder)</p>
 </li>
 <li>
-<p>Base de donnée locale avec des fichiers JSON OU en ligne avec FireBase</p>
+<p>Base de donnée locale avec l&#8217;utilisation de l&#8217;interface Serializable</p>
 </li>
 </ul>
 </div>
@@ -641,79 +643,75 @@ fonctions définies dans le diagramme de classe par rapport aux différents cas 
 <div class="sect1">
 <h2 id="_interface">3. Interface</h2>
 <div class="sectionbody">
-<div id="__asciidoctor-preview-1100__" class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-L&#8217;interface est sujette à des changements.
-</td>
-</tr>
-</table>
-</div>
 <div class="sect2">
-<h3 id="_cr_ation_de_personne">Création de Personne</h3>
-<div id="__asciidoctor-preview-1128__" class="imageblock" style="text-align: center">
+<h3 id="_cr_ation_de_client">Création de Client</h3>
+<div id="__asciidoctor-preview-1122__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Personne.PNG" alt="Interface">
+<img src="IHM/Client.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cr_ation_de_bien_2">Création de Bien</h3>
-<div id="__asciidoctor-preview-1160__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1154__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Bien.PNG" alt="Interface">
+<img src="IHM/Bien.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cr_ation_de_mandat">Création de Mandat</h3>
-<div id="__asciidoctor-preview-1192__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1186__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Mandat.PNG" alt="Interface">
+<img src="IHM/Mandat.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cr_ation_de_promesse">Création de Promesse</h3>
-<div id="__asciidoctor-preview-1224__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1218__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Promesse.PNG" alt="Interface">
+<img src="IHM/Promesse.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cr_ation_d_envie">Création d&#8217;Envie</h3>
-<div id="__asciidoctor-preview-1258__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1252__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Envie.PNG" alt="Interface">
+<img src="IHM/Envie.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_organisation_de_rdv">Organisation de RDV</h3>
-<div id="__asciidoctor-preview-1288__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1282__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/RDV.PNG" alt="Interface">
+<img src="IHM/RDV.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cr_ation_de_pub">Création de Pub</h3>
-<div id="__asciidoctor-preview-1320__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1314__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Pub.PNG" alt="Interface">
+<img src="IHM/PUB.png" alt="Interface">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cr_ation_de_notaire">Création de Notaire</h3>
+<div id="__asciidoctor-preview-1346__" class="imageblock" style="text-align: center">
+<div class="content">
+<img src="IHM/Notaire.png" alt="Interface">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_affichage_de_statistique">Affichage de Statistique</h3>
-<div id="__asciidoctor-preview-1350__" class="imageblock" style="text-align: center">
+<div id="__asciidoctor-preview-1376__" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="IHM/Stat.PNG" alt="Interface">
+<img src="IHM/Stat.png" alt="Interface">
 </div>
 </div>
 </div>
