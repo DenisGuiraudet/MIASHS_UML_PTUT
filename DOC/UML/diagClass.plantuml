@@ -180,7 +180,6 @@ package immo {
   	-int nbPieces
   	-int nbEtages
   	-String chauffage
-  	-Terrain terrain
   	+Maison(int numV, String adresseV, String orientationV, Double prixV, Date venteV, Double surfaceHabitableV, int nbPiecesV, int nbEtagesV, String chauffageV)
   	+Double correspondance(Envie envie)
   }

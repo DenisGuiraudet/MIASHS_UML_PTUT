@@ -19,20 +19,13 @@ import data.pub.TypeImg;
 import data.pub.TypeTexte;
 import data.pub.TypeVid;
 import data.user.Client;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
 
 public class MyController {
 	
@@ -215,7 +208,8 @@ public class MyController {
     @FXML
     private TextArea notaire_toString;
     
-    @FXML
+    @SuppressWarnings("unchecked")
+	@FXML
     public void initialize() {
     	
     	try {
@@ -284,7 +278,7 @@ public class MyController {
         		
         	}
     		
-    		ihm_add_last_bien();
+    		ihm_add_bien();
         	
         	bien_num.setText("");
         	bien_adresse.setText("");
@@ -328,7 +322,7 @@ public class MyController {
         		
         	}
     		
-    		ihm_add_last_client();
+    		ihm_add_client();
     		
 		} catch (Exception e) {
 			client_toString.setText(e.toString());
@@ -389,6 +383,8 @@ public class MyController {
     				Date.from(mandat_dateFin.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
     				((BienImmo)mandat_listBien.getSelectionModel().getSelectedItem()),((Client)mandat_listClient.getSelectionModel().getSelectedItem()));
 			
+    		ihm_add_mandat();
+    		
 		} catch (Exception e) {
 			mandat_toString.setText(e.toString());
 		}
@@ -407,6 +403,9 @@ public class MyController {
     	
     	try {
     		agence.creerNotaire(notaire_nom.getText(), notaire_adresse.getText());
+    		
+    		ihm_add_notaire();
+    		
 		} catch (Exception e) {
 			notaire_toString.setText(e.toString());
 		}
@@ -481,7 +480,7 @@ public class MyController {
 			
     		agence.creerDocument();
     		
-    		ihm_add_last_doc();
+    		ihm_add_doc();
     		
 		} catch (Exception e) {
 			pub_toString.setText(e.toString());
@@ -553,37 +552,76 @@ public class MyController {
 
     }
     
-    private void ihm_add_last_client() {
+    @SuppressWarnings("unchecked")
+	private void ihm_add_client() {
+		
+		((ChoiceBox<Client>)mandat_listClient).getItems().clear();
+        ((ChoiceBox<Client>)prom_listClient).getItems().clear();
+        ((ChoiceBox<Client>)envie_listClient).getItems().clear();
+        ((ChoiceBox<Client>)rdv_listClient).getItems().clear();
     	
-        ((ChoiceBox<Client>)mandat_listClient).getItems().add(agence.getListeClient().get(agence.getListeClient().size() - 1));
-        ((ChoiceBox<Client>)prom_listClient).getItems().add(agence.getListeClient().get(agence.getListeClient().size() - 1));
-        ((ChoiceBox<Client>)envie_listClient).getItems().add(agence.getListeClient().get(agence.getListeClient().size() - 1));
-        ((ChoiceBox<Client>)rdv_listClient).getItems().add(agence.getListeClient().get(agence.getListeClient().size() - 1));
+    	for (Client client : agence.getListeClient()) {
+    		
+    		((ChoiceBox<Client>)mandat_listClient).getItems().add(client);
+            ((ChoiceBox<Client>)prom_listClient).getItems().add(client);
+            ((ChoiceBox<Client>)envie_listClient).getItems().add(client);
+            ((ChoiceBox<Client>)rdv_listClient).getItems().add(client);
+			
+		}
         
     }
     
-    private void ihm_add_last_bien() {
+    @SuppressWarnings("unchecked")
+	private void ihm_add_bien() {
+		
+		((ChoiceBox<BienImmo>)mandat_listBien).getItems().clear();
+        ((ChoiceBox<BienImmo>)prom_listBien).getItems().clear();
     	
-        ((ChoiceBox<BienImmo>)mandat_listBien).getItems().add(agence.getListeBien().get(agence.getListeBien().size() - 1));
-        ((ChoiceBox<BienImmo>)prom_listBien).getItems().add(agence.getListeBien().get(agence.getListeClient().size() - 1));
+    	for (BienImmo bien : agence.getListeBien()) {
+    		
+    		((ChoiceBox<BienImmo>)mandat_listBien).getItems().add(bien);
+            ((ChoiceBox<BienImmo>)prom_listBien).getItems().add(bien);
+			
+		}
+    	
+    }
+    
+    @SuppressWarnings("unchecked")
+	private void ihm_add_notaire() {
+
+        ((ChoiceBox<Notaire>)prom_listNotaire).getItems().clear();
+    	
+    	for (Notaire notaire : agence.getListeNotaire()) {
+
+            ((ChoiceBox<Notaire>)prom_listNotaire).getItems().add(notaire);
+			
+		}
         
     }
     
-    private void ihm_add_last_notaire() {
+    @SuppressWarnings("unchecked")
+	private void ihm_add_mandat() {
+		
+		((ChoiceBox<Mandat>)rdv_listMandat).getItems().clear();
     	
-        ((ChoiceBox<Notaire>)prom_listNotaire).getItems().add(agence.getListeNotaire().get(agence.getListeNotaire().size() - 1));
+    	for (Mandat mandat : agence.getListeMandat()) {
+    		
+    		((ChoiceBox<Mandat>)rdv_listMandat).getItems().add(mandat);
+            
+		}
         
     }
     
-    private void ihm_add_last_mandat() {
+    @SuppressWarnings("unchecked")
+	private void ihm_add_doc() {
+
+		((ChoiceBox<AnnoncePub>)pub_listDoc).getItems().clear();
     	
-        ((ChoiceBox<Mandat>)rdv_listMandat).getItems().add(agence.getListeMandat().get(agence.getListeMandat().size() - 1));
-        
-    }
-    
-    private void ihm_add_last_doc() {
-    	
-        ((ChoiceBox<AnnoncePub>)pub_listDoc).getItems().add(agence.getListeAnnonce().get(agence.getListeAnnonce().size() - 1));
+    	for (AnnoncePub annonce : agence.getListeAnnonce()) {
+
+    		((ChoiceBox<AnnoncePub>)pub_listDoc).getItems().add(annonce);
+            
+		}
         
     }
 

@@ -12,9 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import data.agence.Agence;
-import data.agence.Notaire;
-import data.immo.BienImmo;
-import data.user.Client;
 
 public class AgenceTest {
 
@@ -128,7 +125,7 @@ public class AgenceTest {
 	 */
 	@Test
 	public void testVoirStats() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(agence.toString(), agence.voirStats());
 	}
 
 	/**

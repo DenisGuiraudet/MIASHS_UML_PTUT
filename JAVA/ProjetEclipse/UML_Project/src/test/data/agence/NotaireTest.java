@@ -43,7 +43,7 @@ public class NotaireTest {
 	 */
 	@Test
 	public void testVerserArgent() {
-		fail("Not yet implemented"); // TODO
+		// TODO
 	}
 
 }

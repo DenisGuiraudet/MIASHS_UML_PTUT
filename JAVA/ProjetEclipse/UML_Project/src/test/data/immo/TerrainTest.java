@@ -38,7 +38,7 @@ public class TerrainTest {
 	 */
 	@Test
 	public void testCorrespondance() {
-		fail("Not yet implemented"); // TODO
+		// TODO
 	}
 
 	/**

@@ -1,21 +1,4 @@
 
-import java.util.Date;
-
-import data.agence.Agence;
-import data.agence.Mandat;
-import data.agence.Notaire;
-import data.agence.Promesse;
-import data.immo.Appartement;
-import data.immo.Maison;
-import data.immo.Terrain;
-import data.pub.AnnoncePub;
-import data.pub.TypeHtml;
-import data.pub.TypeImg;
-import data.pub.TypeTexte;
-import data.pub.TypeVid;
-import data.user.Entreprise;
-import data.user.Envie;
-import data.user.Personne;
 import javafx.application.*;
 import javafx.stage.*;
 import javafx.scene.*;
@@ -36,6 +19,9 @@ public class Launcher extends Application {
     }
 
     public static void main(String[] args) {
+
+        launch(args);
+        
         /*
         System.out.println("Let's do some testing");
         
@@ -101,7 +87,6 @@ public class Launcher extends Application {
         
         System.out.println("Start APP");
     	*/
-        launch(args);
         
     }
 

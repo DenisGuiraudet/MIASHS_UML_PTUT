@@ -20,9 +20,7 @@ public class Notaire implements Serializable {
 	
 	public void verserArgent() {
 
-		// TODO : syso / popup
-		// Pas de gestion d argent
-		// Ex : Promesse finie ! GG a toi
+		// TODO
 		
 	}
 

@@ -18,6 +18,7 @@ Cas d'utilisation
 ~~~~~~~~~~~~~~~~~
 
 Le diagramme suivant développe les différentes possibilités d'utilisation d'un membre de l'agence.
+Tous les cas représentés dans le diagramme ont été implémentés dans l'application.
 
 image::UML/diagUseCase.svg[Diagramme des Cas d'utilisation, align="center"]
 
@@ -113,12 +114,10 @@ Choix techniques
 
 - Programme en Java
 - Utilisation de la librairie graphique JavaFX (utilisation du logiciel SceneBuilder)
-- Base de donnée locale avec des fichiers JSON OU en ligne avec FireBase
+- Base de donnée locale avec l'utilisation de l'interface Serializable
 
 Interface
 ---------
-
-NOTE: L'interface est sujette à des changements.
 
 :numbered!:
 
