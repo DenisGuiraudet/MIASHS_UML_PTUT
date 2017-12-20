@@ -223,6 +223,12 @@ public class MyController {
     		e.printStackTrace();
     	}
     	
+    	ihm_add_doc();
+    	ihm_add_mandat();
+    	ihm_add_notaire();
+    	ihm_add_bien();
+    	ihm_add_client();
+    	
         ((ChoiceBox<String>)bien_type).getItems().add("Terrain");
         ((ChoiceBox<String>)bien_type).getItems().add("Maison");
         ((ChoiceBox<String>)bien_type).getItems().add("Appartement");

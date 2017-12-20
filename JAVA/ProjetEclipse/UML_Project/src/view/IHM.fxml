@@ -64,19 +64,19 @@
                         <Label layoutX="206.0" layoutY="149.0" prefHeight="20.0" prefWidth="156.0" text="Longueur Facade" />
                         <TextField fx:id="bien_ter_longFac" layoutX="206.0" layoutY="166.0" />
                         <Label layoutX="15.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Surface Habitable" />
-                        <TextField fx:id="bien_mai_surHab" disable="true" layoutX="15.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_surHab" layoutX="15.0" layoutY="231.0" />
                         <Label layoutX="206.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Nb Pieces" />
-                        <TextField fx:id="bien_mai_nbPi" disable="true" layoutX="206.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_nbPi" layoutX="206.0" layoutY="231.0" />
                         <Label layoutX="388.0" layoutY="214.0" prefHeight="20.0" prefWidth="156.0" text="Nb Etages" />
-                        <TextField fx:id="bien_mai_nbEt" disable="true" layoutX="388.0" layoutY="231.0" />
+                        <TextField fx:id="bien_mai_nbEt" layoutX="388.0" layoutY="231.0" />
                         <Label layoutX="567.0" layoutY="216.0" prefHeight="20.0" prefWidth="156.0" text="Chauffage" />
-                        <TextField fx:id="bien_mai_chauf" disable="true" layoutX="567.0" layoutY="233.0" />
+                        <TextField fx:id="bien_mai_chauf" layoutX="567.0" layoutY="233.0" />
                         <Label layoutX="14.0" layoutY="287.0" prefHeight="20.0" prefWidth="156.0" text="Nb Pieces" />
-                        <TextField fx:id="bien_app_nbPi" disable="true" layoutX="14.0" layoutY="304.0" />
+                        <TextField fx:id="bien_app_nbPi" layoutX="14.0" layoutY="304.0" />
                         <Label layoutX="201.0" layoutY="288.0" prefHeight="20.0" prefWidth="156.0" text="Nb Etages" />
-                        <TextField fx:id="bien_app_nbEt" disable="true" layoutX="201.0" layoutY="305.0" />
+                        <TextField fx:id="bien_app_nbEt" layoutX="201.0" layoutY="305.0" />
                         <Label layoutX="383.0" layoutY="288.0" prefHeight="20.0" prefWidth="156.0" text="Charges Mensuelles" />
-                        <TextField fx:id="bien_app_chargeMensu" disable="true" layoutX="383.0" layoutY="305.0" />
+                        <TextField fx:id="bien_app_chargeMensu" layoutX="383.0" layoutY="305.0" />
                         <Separator layoutX="6.0" layoutY="336.0" prefHeight="35.0" prefWidth="814.0" />
                         <Label layoutX="14.0" layoutY="74.0" prefHeight="20.0" prefWidth="68.0" text="Vente" />
                         <TextArea fx:id="bien_toString" editable="false" layoutX="17.0" layoutY="360.0" prefHeight="148.0" prefWidth="796.0" />
@@ -117,13 +117,13 @@
                         <Button layoutX="188.0" layoutY="247.0" mnemonicParsing="false" onAction="#prom_creer" text="Créer Promesse" />
                         <Label layoutX="167.0" layoutY="31.0" text="Prix Verse Vendeur" />
                         <Label layoutX="19.0" layoutY="86.0" text="Bien :" />
-                        <TextField fx:id="prom_prixVerse" editable="false" layoutX="292.0" layoutY="23.0" />
+                        <TextField fx:id="prom_prixVerse" layoutX="292.0" layoutY="23.0" />
                         <Label layoutX="206.0" layoutY="96.0" text="Date Vente" />
                         <DatePicker fx:id="prom_dateVente" layoutX="292.0" layoutY="73.0" />
                         <Label layoutX="166.0" layoutY="140.0" text="Commission Agence" />
-                        <TextField fx:id="prom_commiAgen" editable="false" layoutX="292.0" layoutY="132.0" />
+                        <TextField fx:id="prom_commiAgen" layoutX="292.0" layoutY="132.0" />
                         <Label layoutX="209.0" layoutY="194.0" text="Frais vente" />
-                        <TextField fx:id="prom_fraisVente" editable="false" layoutX="292.0" layoutY="186.0" />
+                        <TextField fx:id="prom_fraisVente" layoutX="292.0" layoutY="186.0" />
                         <Label layoutX="19.0" layoutY="154.0" text="Notaire :" />
                         <Separator layoutX="6.0" layoutY="337.0" prefHeight="35.0" prefWidth="814.0" />
                         <TextArea fx:id="promesse_toString" editable="false" layoutX="14.0" layoutY="361.0" prefHeight="145.0" prefWidth="804.0" />
