@@ -1,9 +1,11 @@
 # Guiraudet Denis & Orriere Matthieu
 
 ## JAVA
-Pour utiliser le programme, executer "[Guiraudet_Orriere.jar](JAVA/Guiraudet_Orriere.jar)" dans le dossier "[JAVA](JAVA)".
-
 Les sources se situent à l'emplacement suivant : "[JAVA/ProjetEclipse/UML_Project/src](JAVA/ProjetEclipse/UML_Project/src)".
+
+Le main se situe dans le fichier "[Launcher.java](JAVA/ProjetEclipse/UML_Project/src/Launcher.java)".
+
+Pour utiliser le programme directement, executer "[Guiraudet_Orriere.jar](JAVA/Guiraudet_Orriere.jar)" dans le dossier "[JAVA](JAVA)".
 
 ## DOC
 La documentation se situe dans le dossier "[DOC](DOC)".
