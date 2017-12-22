@@ -1,4 +1,4 @@
-# Guiraudet Denis, Orriere Matthieu
+# Guiraudet Denis & Orriere Matthieu
 
 ## JAVA
 Pour utiliser le programme, executer "[Guiraudet_Orriere.jar](JAVA/Guiraudet_Orriere.jar)" dans le dossier "[JAVA](JAVA)".
