@@ -8,4 +8,4 @@ Les sources se situent à l'emplacement suivant : "[JAVA/ProjetEclipse/UML_Proje
 ## DOC
 La documentation se situe dans le dossier "[DOC](DOC)".
 
-Ouvrir "[Dossier_De_Conception.pdf](DOC/Dossier_De_Conception.pdf)" pour la documention et "[Dossier_De_Conception.asciidoc.html](DOC/Dossier_De_Conception.asciidoc.html)" pour la même chose mais en plus beau (le lavabo).
+Ouvrir "[Dossier_De_Conception.pdf](DOC/Dossier_De_Conception.pdf)" pour la documention et "[Dossier_De_Conception.asciidoc.html](https://rawgit.com/Snoopryx/UML-PTUT/master/DOC/Dossier_De_Conception.asciidoc.html)" pour la même chose mais en plus beau (le lavabo).
