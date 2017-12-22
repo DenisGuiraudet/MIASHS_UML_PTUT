@@ -113,6 +113,7 @@ Choix techniques
 ----------------
 
 - Programme en Java
+- Paquetages répartis en MVC
 - Utilisation de la librairie graphique JavaFX (utilisation du logiciel SceneBuilder)
 - Base de donnée locale avec l'utilisation de l'interface Serializable
 

@@ -1,4 +1,7 @@
 
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+
 import javafx.application.*;
 import javafx.stage.*;
 import javafx.scene.*;
@@ -19,7 +22,28 @@ public class Launcher extends Application {
     }
 
     public static void main(String[] args) {
+    	
+    	JUnitCore junit = new JUnitCore();
+    	
+    	System.out.println(junit.run(test.data.agence.MandatTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.agence.AgenceTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.agence.NotaireTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.agence.PromesseTest.class).getFailures().toString());
 
+    	System.out.println(junit.run(test.data.immo.AppartementTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.immo.MaisonTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.immo.TerrainTest.class).getFailures().toString());
+    	
+    	System.out.println(junit.run(test.data.pub.AnnoncePubTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.pub.TypeHtmlTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.pub.TypeImgTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.pub.TypeTexteTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.pub.TypeVidTest.class).getFailures().toString());
+
+    	System.out.println(junit.run(test.data.user.EntrepriseTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.user.EnvieTest.class).getFailures().toString());
+    	System.out.println(junit.run(test.data.user.PersonneTest.class).getFailures().toString());
+    	
         launch(args);
         
         /*
