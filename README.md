@@ -3,8 +3,10 @@
 ## JAVA
 Les sources se situent à l'emplacement suivant : "[JAVA/ProjetEclipse/UML_Project/src](JAVA/ProjetEclipse/UML_Project/src)".
 
-Le main se situe dans le fichier "[Launcher.java](JAVA/ProjetEclipse/UML_Project/src/Launcher.java)", il affiche les erreurs de chaque programme de test puis execute le programme.
-
+Le main se situe dans le fichier "[Launcher.java](JAVA/ProjetEclipse/UML_Project/src/Launcher.java)".
+```
+Il affiche les erreurs de chaque programme de test puis execute le programme.
+```
 Les classes de test se situent à l'emplacement suivant : "[JAVA/ProjetEclipse/UML_Project/src/test/data](JAVA/ProjetEclipse/UML_Project/src/test/data)".
 
 Pour utiliser le programme directement, executer "[Guiraudet_Orriere.jar](JAVA/Guiraudet_Orriere.jar)" dans le dossier "[JAVA](JAVA)".
